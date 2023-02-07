@@ -14,25 +14,33 @@ final class WelcomeView: UIView {
         
         setupViews()
         constraintViews()
-        configureAppearance()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private lazy var labelText: UILabel = {
+        let label = UILabel()
+        label.text = "Hello"
+        label.font = UIFont(name: "Kefa", size: 45)
+        label.textAlignment = .center
+        return label
+    }()
+    
 }
 
 extension WelcomeView {
     
     func setupViews() {
+        setupView(labelText)
         
     }
     
     func constraintViews () {
-        
-    }
-    
-    func configureAppearance() {
-        backgroundColor = .red
+        NSLayoutConstraint.activate([
+            labelText.centerXAnchor.constraint(equalTo: centerXAnchor),
+            labelText.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
     }
 }
