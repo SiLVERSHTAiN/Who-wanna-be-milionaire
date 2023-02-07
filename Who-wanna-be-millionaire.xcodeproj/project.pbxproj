@@ -64,7 +64,7 @@
 		698C5F5129920A5E000D8B61 /* WelcomeModule */ = {
 			isa = PBXGroup;
 			children = (
-				698C5F5929920B7A000D8B61 /* Model */,
+				B312E95C29927A26006DAF05 /* Model */,
 				698C5F5829920B71000D8B61 /* View */,
 				698C5F5729920B67000D8B61 /* Controller */,
 			);
@@ -85,13 +85,6 @@
 				698C5F5C29920BA8000D8B61 /* WelcomeView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		698C5F5929920B7A000D8B61 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		69FD2993299174D000481D00 = {
@@ -321,6 +314,13 @@
 			sourceTree = "<group>";
 		};
 		69FD29E4299177C200481D00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B312E95C29927A26006DAF05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
