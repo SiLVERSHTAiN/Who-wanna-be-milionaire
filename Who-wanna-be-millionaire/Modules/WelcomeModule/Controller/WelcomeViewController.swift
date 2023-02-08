@@ -36,7 +36,7 @@ extension WelcomeViewController {
             backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            logoAndLabelView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            logoAndLabelView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             logoAndLabelView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             logoAndLabelView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             logoAndLabelView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.46),

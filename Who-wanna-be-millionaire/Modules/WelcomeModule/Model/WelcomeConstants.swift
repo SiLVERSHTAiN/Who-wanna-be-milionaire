@@ -19,7 +19,7 @@ enum WelcomeConstants {
         case textAvenirFontBold = "Avenir Next Bold"
         
         static func setFont(name: WelcomeConstants.Fonts, size: CGFloat) -> UIFont? {
-            return UIFont(name: name.rawValue, size: size)
+            UIFont(name: name.rawValue, size: size)
         }
     }
 }
