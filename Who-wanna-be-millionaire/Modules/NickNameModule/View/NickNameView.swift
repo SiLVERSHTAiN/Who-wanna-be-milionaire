@@ -61,7 +61,7 @@ final class NickNameView: UIView {
 //        return stack
 //    }()
     
-    private var stackView = UIStackView(.stack
+//    private lazy var stackView: UIStackView = .vertical(subviews: <#T##[UIView]#>, spacing: <#T##CGFloat#>, alignment: <#T##Alignment#>, distribution: <#T##Distribution#>)
 }
 
 extension NickNameView {
