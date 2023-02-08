@@ -18,6 +18,15 @@ class WelcomeViewController: UIViewController {
 
         setupViews()
         setConstraints()
+        
+        buttonsView.rulesButton.addTarget(self, action: #selector(rulesButtonAction), for: .touchUpInside)
+    }
+    
+    @objc func rulesButtonAction() {
+        let rulesViewController = RulesViewController()
+        rulesViewController.modalPresentationStyle = .fullScreen
+        rulesViewController.modalTransitionStyle = .crossDissolve
+        present(rulesViewController, animated: true)
     }
 }
 
