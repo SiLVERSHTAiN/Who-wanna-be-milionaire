@@ -4,30 +4,27 @@ class LogoAndLabelView: UIView {
     
     private lazy var logoImage: UIImageView = {
         let logoImage = UIImageView()
-        let image = UIImage(named: WelcomeConstants.welcomeMillionaireLogo)
+        let image = UIImage(named: WelcomeConstants.Image.welcomeLogoName)
         logoImage.image = image
-        
         return logoImage
     }()
     
     private lazy var welcomeLabel: UILabel = {
         let label = UILabel()
-        label.text = WelcomeConstants.welcomLeabelText
-        label.font = UIFont(name: WelcomeConstants.textFont, size: 24)
+        label.text = WelcomeConstants.Text.welcomLabelText
+        label.font = WelcomeConstants.Fonts.setFont(name: .textAvenirFont, size: 24)
         label.textColor = .white
         label.textAlignment = .center
-        
         return label
     }()
     
     private lazy var gameNameLabel: UILabel = {
         let label = UILabel()
-        label.text = WelcomeConstants.gameNameLabelText
-        label.font = UIFont(name: WelcomeConstants.textFontBold, size: 36)
+        label.text = WelcomeConstants.Text.gameNameLabelText
+        label.font = WelcomeConstants.Fonts.setFont(name: .textAvenirFontBold, size: 36)
         label.textColor = .white
         label.numberOfLines = 0
         label.textAlignment = .center
-        
         return label
     }()
     
@@ -36,13 +33,14 @@ class LogoAndLabelView: UIView {
  
         setupViews()
         setConstraints()
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+extension LogoAndLabelView {
     
     func setupViews() {
         setupView(logoImage)
@@ -66,6 +64,5 @@ class LogoAndLabelView: UIView {
             gameNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             gameNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
-        
     }
 }

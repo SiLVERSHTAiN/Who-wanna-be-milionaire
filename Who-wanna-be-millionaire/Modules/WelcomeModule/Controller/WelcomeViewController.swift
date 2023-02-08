@@ -4,10 +4,9 @@ class WelcomeViewController: UIViewController {
 
     private lazy var backgroundImage: UIImageView = {
         let background = UIImageView(frame: .zero)
-        let image = UIImage(named: WelcomeConstants.backgroundImageName)
+        let image = UIImage(named: WelcomeConstants.Image.backgroundImageName)
         background.image = image
         background.contentMode = .scaleAspectFill
-        background.translatesAutoresizingMaskIntoConstraints = false
         return background
     }()
     
@@ -20,21 +19,15 @@ class WelcomeViewController: UIViewController {
         setupViews()
         setConstraints()
     }
-    
-    func setupViews() {
-        
-        view.addSubview(backgroundImage)
-        
-        view.addSubview(logoAndLabelView)
-        logoAndLabelView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(buttonsView)
-        buttonsView.translatesAutoresizingMaskIntoConstraints = false
-        
-    }
 }
 
 extension WelcomeViewController {
+    
+    func setupViews() {
+        view.setupView(backgroundImage)
+        view.setupView(logoAndLabelView)
+        view.setupView(buttonsView)
+    }
     
     func setConstraints(){
         NSLayoutConstraint.activate([

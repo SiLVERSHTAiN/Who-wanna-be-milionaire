@@ -4,29 +4,26 @@ class ButtonsView: UIView {
     
     // Added undeline
     private lazy var attrs = [
-        NSAttributedString.Key.font : UIFont(name: WelcomeConstants.textFontBold, size: 32) ?? .systemFont(ofSize: 32),
+        NSAttributedString.Key.font : WelcomeConstants.Fonts.setFont(name: .textAvenirFontBold, size: 32) ?? .systemFont(ofSize: 32),
         NSAttributedString.Key.foregroundColor : UIColor(red: 83/255, green: 225/250, blue: 165/255, alpha: 1.0),
         NSAttributedString.Key.underlineStyle : 1] as [NSAttributedString.Key : Any]
 
-    private lazy var startAttributedString = NSMutableAttributedString(string:"")
-    private lazy var roolsAttributedString = NSMutableAttributedString(string:"")
+    private lazy var startAttributedString = NSMutableAttributedString(string: "")
+    private lazy var roolsAttributedString = NSMutableAttributedString(string: "")
     
-    
-    private lazy var roolsButton: UIButton = {
+    private lazy var rulesButton: UIButton = {
         let button = UIButton(type: .system)
-        let buttonTitleStr = NSMutableAttributedString(string: WelcomeConstants.roolsButtonTitle, attributes:attrs)
+        let buttonTitleStr = NSMutableAttributedString(string: WelcomeConstants.Text.rulesButtonTitleText, attributes:attrs)
         roolsAttributedString.append(buttonTitleStr)
         button.setAttributedTitle(roolsAttributedString, for: .normal)
-        
         return button
     }()
     
     private lazy var startGameButton: UIButton = {
         let button = UIButton(type: .system)
-        let buttonTitleStr = NSMutableAttributedString(string: WelcomeConstants.startButtonTitle, attributes:attrs)
+        let buttonTitleStr = NSMutableAttributedString(string: WelcomeConstants.Text.startButtonTitleText, attributes:attrs)
         startAttributedString.append(buttonTitleStr)
         button.setAttributedTitle(startAttributedString, for: .normal)
-        
         return button
     }()
     
@@ -35,27 +32,27 @@ class ButtonsView: UIView {
         
         setupViews()
         setConstraints()
-        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension ButtonsView {
     
     func setupViews() {
-        setupView(roolsButton)
+        setupView(rulesButton)
         setupView(startGameButton)
     }
     
     func setConstraints() {
         NSLayoutConstraint.activate([
-            roolsButton.topAnchor.constraint(equalTo: topAnchor),
-            roolsButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            rulesButton.topAnchor.constraint(equalTo: topAnchor),
+            rulesButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            startGameButton.topAnchor.constraint(equalTo: roolsButton.bottomAnchor, constant: 6),
+            startGameButton.topAnchor.constraint(equalTo: rulesButton.bottomAnchor, constant: 6),
             startGameButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
         ])
-        
     }
 }
