@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6918794A2993DFF400C193E5 /* NickNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691879492993DFF400C193E5 /* NickNameModel.swift */; };
+		6918794C2993E0BE00C193E5 /* Ext + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6918794B2993E0BE00C193E5 /* Ext + UIColor.swift */; };
 		698C5F5B29920B8A000D8B61 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698C5F5A29920B8A000D8B61 /* WelcomeViewController.swift */; };
 		698C5F5D29920BA8000D8B61 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698C5F5C29920BA8000D8B61 /* WelcomeView.swift */; };
 		69FD29A0299174D000481D00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD299F299174D000481D00 /* AppDelegate.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		691879492993DFF400C193E5 /* NickNameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameModel.swift; sourceTree = "<group>"; };
+		6918794B2993E0BE00C193E5 /* Ext + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext + UIColor.swift"; sourceTree = "<group>"; };
 		698C5F5A29920B8A000D8B61 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		698C5F5C29920BA8000D8B61 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		69FD299C299174D000481D00 /* Who-wanna-be-millionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Who-wanna-be-millionaire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +142,7 @@
 			children = (
 				69FD29B6299175C700481D00 /* Ext + UIView.swift */,
 				69FD29B82991761600481D00 /* Ext + UIStackView.swift */,
+				6918794B2993E0BE00C193E5 /* Ext + UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 		69FD29D22991773400481D00 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				691879492993DFF400C193E5 /* NickNameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -399,12 +405,14 @@
 			files = (
 				69FD29F7299179C900481D00 /* RulesViewController.swift in Sources */,
 				69FD29F12991797600481D00 /* MainGameView.swift in Sources */,
+				6918794A2993DFF400C193E5 /* NickNameModel.swift in Sources */,
 				69FD29A0299174D000481D00 /* AppDelegate.swift in Sources */,
 				698C5F5D29920BA8000D8B61 /* WelcomeView.swift in Sources */,
 				69FD29F5299179AA00481D00 /* NickNameView.swift in Sources */,
 				69FD29B7299175C700481D00 /* Ext + UIView.swift in Sources */,
 				69FD29F32991799B00481D00 /* NickNameViewController.swift in Sources */,
 				698C5F5B29920B8A000D8B61 /* WelcomeViewController.swift in Sources */,
+				6918794C2993E0BE00C193E5 /* Ext + UIColor.swift in Sources */,
 				69FD29B92991761600481D00 /* Ext + UIStackView.swift in Sources */,
 				69FD29EB2991792C00481D00 /* AnswerViewController.swift in Sources */,
 				69FD29EF2991796400481D00 /* MainGameViewController.swift in Sources */,
