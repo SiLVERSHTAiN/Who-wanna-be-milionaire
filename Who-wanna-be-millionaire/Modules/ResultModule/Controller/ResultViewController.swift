@@ -8,6 +8,15 @@
 import UIKit
 
 class ResultViewController: UIViewController {
+    
+    // define an image view for background of the superView
+    private lazy var backgroundImageView: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "background")
+        image.contentMode = .scaleAspectFill
+        
+        return image
+    }()
 
     
     // property of View
@@ -16,33 +25,26 @@ class ResultViewController: UIViewController {
     
     // set constraints between SuperView and View (stackView):
     func constraintViews () {
+        
+        backgroundImageView.frame = view.frame
+        
         NSLayoutConstraint.activate([
-            resultView.topAnchor.constraint(equalTo: view.topAnchor),
+            
+            
+            resultView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             resultView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             resultView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            resultView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            resultView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(backgroundImageView)
         view.setupView(resultView)
         constraintViews()
     
     }
     
 }
-
-
-//// change background color:
-//view.backgroundColor = .green
-//
-//
-//// add stack view to the super view:
-//view.setupView(verticalStack)
-//
-//// add all our elements to the stack view:
-//verticalStack.addArrangedSubviews([backgroundImageView, labelImageView, attemptLabel, loseLabel, playAgainButton])
-//
-//setupConstraints()
