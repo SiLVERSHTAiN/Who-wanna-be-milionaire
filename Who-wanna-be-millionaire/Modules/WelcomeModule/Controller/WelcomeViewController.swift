@@ -23,10 +23,15 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func rulesButtonAction() {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.moveIn
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
         let rulesViewController = RulesViewController()
         rulesViewController.modalPresentationStyle = .fullScreen
-        rulesViewController.modalTransitionStyle = .crossDissolve
-        present(rulesViewController, animated: true)
+        present(rulesViewController, animated: false, completion: nil)
     }
 }
 
