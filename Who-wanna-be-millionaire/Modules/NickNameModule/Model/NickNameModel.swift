@@ -12,6 +12,7 @@ enum Resources {
     enum Images {
         static let background = UIImage(named: "background_gold")
         static let gameLogo = UIImage(named: "medium_logo")
+        static let buttonBackgroun = UIImage(named: "Rectangle 3")
     }
     
     enum Texts {
