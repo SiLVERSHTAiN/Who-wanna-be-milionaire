@@ -23,8 +23,8 @@ final class ResultView: UIView {
         label.text = "You losed on {attempt} attempt"
         label.textColor = .white
         label.numberOfLines = 0
-        // label.font = UIFont(name: "Roboto", size: 24)
-        label.font = .systemFont(ofSize: 24)
+        label.font = UIFont(name: "Avenir", size: 24)
+        // label.font = .systemFont(ofSize: 24)
         label.textAlignment = .center
         label.backgroundColor = .clear
         return label
@@ -39,8 +39,8 @@ final class ResultView: UIView {
         label.textAlignment = .center
         // label.textColor = UIColor.hexStringToUIColor(hex: "#F66324")
         label.numberOfLines = 0
-        // label.font = UIFont(name: "Syne", size: 50)
-        label.font = .systemFont(ofSize: 50)
+         label.font = UIFont(name: "Avenir", size: 50)
+        // label.font = .systemFont(ofSize: 50)
         
         return label
         
