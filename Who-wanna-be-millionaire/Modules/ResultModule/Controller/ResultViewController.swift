@@ -38,7 +38,6 @@ class ResultViewController: UIViewController {
         view.addSubview(backgroundImageView)
         view.setupView(resultView)
         constraintViews()
-    
     }
     
 }

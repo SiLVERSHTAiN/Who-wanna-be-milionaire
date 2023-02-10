@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		698C5F5B29920B8A000D8B61 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698C5F5A29920B8A000D8B61 /* WelcomeViewController.swift */; };
-		698C5F5D29920BA8000D8B61 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698C5F5C29920BA8000D8B61 /* WelcomeView.swift */; };
 		69FD29A0299174D000481D00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD299F299174D000481D00 /* AppDelegate.swift */; };
 		69FD29A2299174D000481D00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD29A1299174D000481D00 /* SceneDelegate.swift */; };
 		69FD29A9299174D200481D00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69FD29A8299174D200481D00 /* Assets.xcassets */; };
@@ -26,11 +25,14 @@
 		69FD29F7299179C900481D00 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD29F6299179C900481D00 /* RulesViewController.swift */; };
 		69FD29F9299179D700481D00 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD29F8299179D700481D00 /* RulesView.swift */; };
 		DDF8456C2993E8D60019AAB8 /* Ext + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF8456B2993E8D60019AAB8 /* Ext + UIColor.swift */; };
+
+		B312E95E2992AF33006DAF05 /* LogoAndLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B312E95D2992AF33006DAF05 /* LogoAndLabelView.swift */; };
+		B312E9602992AFF4006DAF05 /* WelcomeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B312E95F2992AFF4006DAF05 /* WelcomeConstants.swift */; };
+		B3ACDDCB2992E913008AD923 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3ACDDCA2992E913008AD923 /* ButtonsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		698C5F5A29920B8A000D8B61 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		698C5F5C29920BA8000D8B61 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		69FD299C299174D000481D00 /* Who-wanna-be-millionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Who-wanna-be-millionaire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FD299F299174D000481D00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69FD29A1299174D000481D00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,9 @@
 		69FD29F6299179C900481D00 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		69FD29F8299179D700481D00 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		DDF8456B2993E8D60019AAB8 /* Ext + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext + UIColor.swift"; sourceTree = "<group>"; };
+		B312E95D2992AF33006DAF05 /* LogoAndLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAndLabelView.swift; sourceTree = "<group>"; };
+		B312E95F2992AFF4006DAF05 /* WelcomeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeConstants.swift; sourceTree = "<group>"; };
+		B3ACDDCA2992E913008AD923 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +89,8 @@
 		698C5F5829920B71000D8B61 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				698C5F5C29920BA8000D8B61 /* WelcomeView.swift */,
+				B312E95D2992AF33006DAF05 /* LogoAndLabelView.swift */,
+				B3ACDDCA2992E913008AD923 /* ButtonsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +332,7 @@
 		B312E95C29927A26006DAF05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B312E95F2992AFF4006DAF05 /* WelcomeConstants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,15 +410,17 @@
 				69FD29F7299179C900481D00 /* RulesViewController.swift in Sources */,
 				69FD29F12991797600481D00 /* MainGameView.swift in Sources */,
 				69FD29A0299174D000481D00 /* AppDelegate.swift in Sources */,
-				698C5F5D29920BA8000D8B61 /* WelcomeView.swift in Sources */,
 				69FD29F5299179AA00481D00 /* NickNameView.swift in Sources */,
 				69FD29B7299175C700481D00 /* Ext + UIView.swift in Sources */,
+				B312E9602992AFF4006DAF05 /* WelcomeConstants.swift in Sources */,
+				B3ACDDCB2992E913008AD923 /* ButtonsView.swift in Sources */,
 				69FD29F32991799B00481D00 /* NickNameViewController.swift in Sources */,
 				698C5F5B29920B8A000D8B61 /* WelcomeViewController.swift in Sources */,
 				69FD29B92991761600481D00 /* Ext + UIStackView.swift in Sources */,
 				69FD29EB2991792C00481D00 /* AnswerViewController.swift in Sources */,
 				69FD29EF2991796400481D00 /* MainGameViewController.swift in Sources */,
 				69FD29ED2991793D00481D00 /* AnswerView.swift in Sources */,
+				B312E95E2992AF33006DAF05 /* LogoAndLabelView.swift in Sources */,
 				69FD29F9299179D700481D00 /* RulesView.swift in Sources */,
 				69FD29A2299174D000481D00 /* SceneDelegate.swift in Sources */,
 				69FD29E82991789000481D00 /* ResultView.swift in Sources */,
