@@ -9,7 +9,6 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
-    // define an image view for background of the superView
     private lazy var backgroundImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "background")
@@ -18,12 +17,8 @@ class ResultViewController: UIViewController {
         return image
     }()
 
-    
-    // property of View
     var resultView = ResultView()
     
-    
-    // set constraints between SuperView and View (stackView):
     func constraintViews () {
         
         backgroundImageView.frame = view.frame
@@ -38,7 +33,6 @@ class ResultViewController: UIViewController {
         ])
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(backgroundImageView)

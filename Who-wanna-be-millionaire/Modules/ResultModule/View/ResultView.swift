@@ -9,15 +9,13 @@ import UIKit
 
 final class ResultView: UIView {
     
-    // define an image view for logo
     private lazy var logoImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: "big_logo")
         image.contentMode = .scaleAspectFill
         return image
     }()
-    
-    // define label for "lose on attempt"
+
     private lazy var descriptionTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "You losed on {attempt} attempt"
@@ -30,42 +28,26 @@ final class ResultView: UIView {
         return label
     }()
     
-    // define label for word "LOSE"
     private lazy var resultTitleLabel: UILabel = {
         let label = UILabel()
-        // need to change color to  #F66324
         label.text = "LOSE"
         label.textColor = UIColor.orange
+        label.textColor = .init(hexString: "#F66324")
         label.textAlignment = .center
-        // label.textColor = UIColor.hexStringToUIColor(hex: "#F66324")
         label.numberOfLines = 0
-         label.font = UIFont(name: "Avenir", size: 50)
-        // label.font = .systemFont(ofSize: 50)
-        
+        label.font = UIFont(name: "Avenir", size: 50)
         return label
-        
     }()
     
-    // define label button "PLAY AGAIN"
-    // private lazy var playAgainButton: UIButton {
     lazy var playAgainButton: UIButton = {
         let button = UIButton()
         button.setTitle("PLAY AGAIN", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 36)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .green
+        button.backgroundColor = .init(hexString: "#34B83A")
         button.layer.cornerRadius = 20
         return button
     }()
-    
-//    // define entity for stack view
-//    private lazy var verticalStack: UIStackView = {
-//        let stack = UIStackView()
-//        stack.axis = .vertical
-//        // stack.distribution = .fillProportionally
-//        stack.spacing = 10
-//        return stack
-//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -80,25 +62,17 @@ final class ResultView: UIView {
     }
 }
 
-// set extention and immediately call this functions in Init:
 extension ResultView {
     
-    // add stack view and fill it with elements:
     func setupViews() {
         
-        // add all elements to the view without Stack View
         setupView(logoImageView)
         setupView(descriptionTitleLabel)
         setupView(resultTitleLabel)
         setupView(playAgainButton)
-        
-
-        
     }
     
-    // set constraints for stack view
     func constraintViews () {
-        
         
         NSLayoutConstraint.activate([
             
