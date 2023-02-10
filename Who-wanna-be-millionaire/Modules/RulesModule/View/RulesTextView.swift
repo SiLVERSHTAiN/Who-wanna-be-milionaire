@@ -10,7 +10,7 @@ class RulesTextView: UIView {
         textView.layer.borderColor = UIColor.white.cgColor
         textView.text = RulesResources.Text.RoolsText.result
         textView.font = RulesResources.Fonts.setFont(name: .textAvenirFont, size: 14)
-        textView.textColor = RulesResources.TextColor.greenColor
+        textView.textColor = RulesResources.TextColor.green
         textView.textAlignment = .justified
         textView.backgroundColor = .clear
         return textView

@@ -6,7 +6,7 @@ final class UpperElementsView: UIView {
         let button = UIButton(type: .system)
         button.setTitle(RulesResources.Text.backButtonTitleText, for: .normal)
         button.titleLabel?.font = RulesResources.Fonts.setFont(name: .textAvenirFont, size: 20)
-        button.tintColor = UIColor(red: 83/255, green: 225/250, blue: 165/255, alpha: 1.0)
+        button.tintColor = RulesResources.TextColor.green
         return button
     }()
     
@@ -14,7 +14,7 @@ final class UpperElementsView: UIView {
         let label = UILabel()
         label.text = RulesResources.Text.rulesLabelText
         label.font = RulesResources.Fonts.setFont(name: .textAvenirFontBold, size: 36)
-        label.textColor = RulesResources.TextColor.greenColor
+        label.textColor = RulesResources.TextColor.green
         return label
     }()
     

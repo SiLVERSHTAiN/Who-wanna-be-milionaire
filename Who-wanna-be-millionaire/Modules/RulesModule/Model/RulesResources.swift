@@ -35,6 +35,6 @@ enum RulesResources {
     }
     
     enum TextColor {
-        static let greenColor = UIColor(red: 83/255, green: 225/250, blue: 165/255, alpha: 1.0)
+        static let green = UIColor(red: 83/255, green: 225/250, blue: 165/255, alpha: 1.0)
     }
 }
