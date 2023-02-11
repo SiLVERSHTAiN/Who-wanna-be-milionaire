@@ -80,12 +80,14 @@ extension NickNameViewController {
         }
     }
     
-    @objc func buttonTapped(_ sender: UIButton) {
+    @objc func registerButtonTapped(_ sender: UIButton) {
         guard let nickName = nickNameView.nickName.text, !(nickName.isEmpty) else {
             wrongFormatAlert()
             return
         }
-        
-        
+        let AnswerViewController = AnswerViewController()
+        AnswerViewController.modalPresentationStyle = .fullScreen
+        AnswerViewController.modalTransitionStyle = .crossDissolve
+        present(AnswerViewController, animated: true, completion: nil)
     }
 }

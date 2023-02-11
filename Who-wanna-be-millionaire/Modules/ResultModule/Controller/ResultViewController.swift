@@ -11,7 +11,7 @@ class ResultViewController: UIViewController {
     
     private lazy var backgroundImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "background")
+        image.image = UIImage(named: Res.Image.backgroundImageName)
         image.contentMode = .scaleAspectFill
         
         return image

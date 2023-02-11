@@ -29,7 +29,7 @@ enum RulesResources {
         case textAvenirFont = "Avenir Next"
         case textAvenirFontBold = "Avenir Next Bold"
         
-        static func setFont(name: WelcomeConstants.Fonts, size: CGFloat) -> UIFont? {
+        static func setFont(name: Res.Fonts, size: CGFloat) -> UIFont? {
             UIFont(name: name.rawValue, size: size)
         }
     }

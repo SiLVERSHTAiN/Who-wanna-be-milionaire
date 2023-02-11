@@ -11,18 +11,17 @@ final class ResultView: UIView {
     
     private lazy var logoImageView: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "big_logo")
+        image.image = UIImage(named: Res.Image.bigLogo)
         image.contentMode = .scaleAspectFill
         return image
     }()
 
     private lazy var descriptionTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "You losed on {attempt} attempt"
+        label.text = Res.Text.loseGame
         label.textColor = .white
         label.numberOfLines = 0
-        label.font = UIFont(name: "Avenir", size: 24)
-        // label.font = .systemFont(ofSize: 24)
+        label.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         label.textAlignment = .center
         label.backgroundColor = .clear
         return label
@@ -30,19 +29,19 @@ final class ResultView: UIView {
     
     private lazy var resultTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "LOSE"
+        label.text = Res.Text.lose
         label.textColor = UIColor.orange
         label.textColor = .init(hexString: "#F66324")
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.font = UIFont(name: "Avenir", size: 50)
+        label.font = Res.Fonts.setFont(name: .textAvenirFont, size: 50)
         return label
     }()
     
     lazy var playAgainButton: UIButton = {
         let button = UIButton()
-        button.setTitle("PLAY AGAIN", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 36)
+        button.setTitle(Res.Text.playAgain, for: .normal)
+        button.titleLabel?.font = Res.Fonts.setFont(name: .textAvenirFont, size: 36)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .init(hexString: "#34B83A")
         button.layer.cornerRadius = 20

@@ -23,22 +23,22 @@ final class NickNameView: UIView {
     
     private lazy var backgroundImage: UIImageView = {
         let background = UIImageView()
-        background.image = Resources.Images.background
+        background.image = UIImage(named: Res.Image.backgroundImageName) 
         return background
     }()
     
     private lazy var mainLogoImage: UIImageView = {
         let logo = UIImageView()
-        logo.image = Resources.Images.gameLogo
+        logo.image = UIImage(named: Res.Image.bigLogo)
         return logo
     }()
     
     private lazy var textLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.text = Resources.Texts.mainText
+        label.text = Res.Text.enterUrName
         label.textAlignment = .center
-        label.font = Resources.Fonts.setFont(name: .textAvenirFont, size: 28)
+        label.font = Res.Fonts.setFont(name: .textAvenirFont, size: 28)
         return label
     }()
     
@@ -46,8 +46,8 @@ final class NickNameView: UIView {
         let name = CustomTextField()
         name.returnKeyType = .done
         name.backgroundColor = .white
-        name.layer.borderColor = Resources.Colors.buttonColorGray.cgColor
-        name.placeholder = "Enter your Nickname"
+        name.layer.borderColor = UIColor.systemGray.cgColor
+        name.placeholder = Res.Text.enterUrName
         name.layer.cornerRadius = 15
         name.layer.borderWidth = 2
         return name
@@ -55,11 +55,11 @@ final class NickNameView: UIView {
     
     private lazy var registerButton: UIButton = {
         let register = UIButton(type: .system)
-        register.setBackgroundImage(Resources.Images.buttonBackgroun, for: .normal)
-        register.setTitle(Resources.Texts.buttonText, for: .normal)
+        register.setBackgroundImage(Res.Image.registerBackground, for: .normal)
+        register.setTitle(Res.Text.register, for: .normal)
         register.setTitleColor(UIColor.white, for: .normal)
-        register.titleLabel?.font = Resources.Fonts.setFont(name: .textAvenirFont, size: 28)
-        register.addTarget(nil, action: #selector(NickNameViewController.buttonTapped), for: .touchUpInside)
+        register.titleLabel?.font = Res.Fonts.setFont(name: .textAvenirFont, size: 28)
+        register.addTarget(nil, action: #selector(NickNameViewController.registerButtonTapped), for: .touchUpInside)
         return register
     }()
 }
@@ -106,6 +106,4 @@ extension NickNameView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nickName.resignFirstResponder()
     }
-    
-    
 }

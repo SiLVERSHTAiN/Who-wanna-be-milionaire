@@ -19,65 +19,15 @@ class AnswerView: BaseView {
     let baseViewThree = UIView()
     let baseViewFour = UIView()
     
-    let backgroundImage = UIImage(named: "background")
-    let logoImage = UIImage(named: "logo")
-    let buttonBackgroundImage = UIImage(named: "Rectangle 3")
-    let fiftyBackgroundImage = UIImage(named: "fifty-fifty_help")
-    let peopleBackgroundImage = UIImage(named: "group_help")
-    let phoneBackgroundImage = UIImage(named: "telephone_help")
-    let fiftyDisableBackgroundImage = UIImage(named: "fifty-fifty_disable")
-    let peopleDisableBackgroundImage = UIImage(named: "group_disable")
-    let phoneDisableBackgroundImage = UIImage(named: "telephone_disable")
-    
-    
-    
-    override func setupViews() {
-        backgroundColor = .blue
-        setupView(backgroundImageView)
-        setupView(logoQuestionStack)
-        setupView(questionPrizeStack)
-        setupView(answerButtonStack)
-        setupView(hintButtonStack)
-        
-        millionaireBrain.getAnswers(answerALabel, answerBLabel, answerCLabel, answerDLabel)
-        
-        firstAnswerButton.addSubview(ALabel)
-        firstAnswerButton.addSubview(answerALabel)
-        secondAnswerButton.addSubview(BLabel)
-        secondAnswerButton.addSubview(answerBLabel)
-        thirdAnswerButton.addSubview(CLabel)
-        thirdAnswerButton.addSubview(answerCLabel)
-        fourthAnswerButton.addSubview(DLabel)
-        fourthAnswerButton.addSubview(answerDLabel)
-        
-        baseViewOne.addSubview(firstAnswerButton)
-        baseViewTwo.addSubview(secondAnswerButton)
-        baseViewThree.addSubview(thirdAnswerButton)
-        baseViewFour.addSubview(fourthAnswerButton)
-        
-        logoQuestionStack.addArrangedSubview(logoImageView)
-        logoQuestionStack.addArrangedSubview(questionLabel)
-        
-        questionPrizeStack.addArrangedSubview(questionNumberLabel)
-        questionPrizeStack.addArrangedSubview(timerLabel)
-        questionPrizeStack.addArrangedSubview(prizeLabel)
-        
-        answerButtonStack.addArrangedSubview(baseViewOne)
-        answerButtonStack.addArrangedSubview(baseViewTwo)
-        answerButtonStack.addArrangedSubview(baseViewThree)
-        answerButtonStack.addArrangedSubview(baseViewFour)
-        
-        hintButtonStack.addArrangedSubview(fiftyHintButton)
-        hintButtonStack.addArrangedSubview(peopleHintButton)
-        hintButtonStack.addArrangedSubview(phoneHintButton)
-        
-        setupConstraints()
-    }
-    
-    
-    
-    
-    
+    let backgroundImage = UIImage(named: Res.Image.backgroundImageName)
+    let logoImage = UIImage(named: Res.Image.bigLogo)
+    let buttonBackgroundImage = UIImage(named: Res.Text.buttonBackgroundImage)
+    let fiftyBackgroundImage = UIImage(named: Res.Text.fiftyBackgroundImage)
+    let peopleBackgroundImage = UIImage(named: Res.Text.peopleBackgroundImage)
+    let phoneBackgroundImage = UIImage(named: Res.Text.phoneBackgroundImage)
+    let fiftyDisableBackgroundImage = UIImage(named: Res.Text.fiftyDisableBackgroundImage)
+    let peopleDisableBackgroundImage = UIImage(named: Res.Text.peopleDisableBackgroundImage)
+    let phoneDisableBackgroundImage = UIImage(named: Res.Text.phoneDisableBackgroundImage)
     
     private lazy var backgroundImageView: UIImageView = {
         let view = UIImageView(image: backgroundImage)
@@ -97,8 +47,7 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = millionaireBrain.getQuestionText()
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
-        //view.textAlignment = .natural
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .left
         view.numberOfLines = 0
         view.adjustsFontSizeToFitWidth = true
@@ -110,7 +59,7 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = "Question 1"
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .natural
         view.numberOfLines = 1
         view.adjustsFontSizeToFitWidth = true
@@ -122,7 +71,7 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = "0:\(millionaireBrain.numberOfSeconds)"
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .center
         view.numberOfLines = 1
         view.adjustsFontSizeToFitWidth = true
@@ -138,7 +87,7 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = "250 RUB"
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .right
         view.numberOfLines = 1
         view.adjustsFontSizeToFitWidth = true
@@ -150,10 +99,9 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = "A"
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .left
         view.numberOfLines = 1
-        //view.contentMode = .center
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -161,7 +109,7 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = "1111"
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .natural
         view.numberOfLines = 1
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -171,7 +119,7 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = "B"
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .natural
         view.numberOfLines = 1
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -181,7 +129,7 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = "2222"
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .natural
         view.numberOfLines = 1
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -191,7 +139,7 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = "C"
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .natural
         view.numberOfLines = 1
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -201,7 +149,7 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = "3333"
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .natural
         view.numberOfLines = 1
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -211,7 +159,7 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = "D"
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .natural
         view.numberOfLines = 1
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -221,7 +169,7 @@ class AnswerView: BaseView {
         let view = UILabel()
         view.text = "4444"
         view.textColor = .white
-        view.font = UIFont(name: "Helvetica Neue", size: 24)
+        view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .natural
         view.numberOfLines = 1
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -281,7 +229,7 @@ class AnswerView: BaseView {
     }()
     
     
-    func fiftyShow(_ answers: [String], _ buttons: [UIButton], _ labels: [UILabel]) {
+    func showFiftyFiftyHint(_ answers: [String], _ buttons: [UIButton], _ labels: [UILabel]) {
         if millionaireBrain.fiftyFiftyHintUsed {
             return
         } else {
@@ -334,12 +282,15 @@ class AnswerView: BaseView {
     }()
     
     @objc func hintButtonTapped(sender: UIButton) {
-        switch sender.currentTitle ?? "Error" {
+        
+        guard let choose = sender.currentTitle else { return }
+        
+        switch choose {
         case "50/50":
             sender.setBackgroundImage(fiftyDisableBackgroundImage, for: .normal)
             let answers = millionaireBrain.fiftyFiftyHint()
             print(answers)
-            fiftyShow(answers, answerButtonsArray, answerLabelsArray)
+            showFiftyFiftyHint(answers, answerButtonsArray, answerLabelsArray)
         case "people":
             sender.setBackgroundImage(peopleDisableBackgroundImage, for: .normal)
             millionaireBrain.peopleHint(firstAnswerButton, secondAnswerButton, thirdAnswerButton, fourthAnswerButton, answerALabel, answerBLabel, answerCLabel, answerDLabel)
@@ -392,6 +343,49 @@ class AnswerView: BaseView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    override func setupViews() {
+        backgroundColor = .blue
+        setupView(backgroundImageView)
+        setupView(logoQuestionStack)
+        setupView(questionPrizeStack)
+        setupView(answerButtonStack)
+        setupView(hintButtonStack)
+        
+        millionaireBrain.getAnswers(answerALabel, answerBLabel, answerCLabel, answerDLabel)
+        
+        firstAnswerButton.addSubview(ALabel)
+        firstAnswerButton.addSubview(answerALabel)
+        secondAnswerButton.addSubview(BLabel)
+        secondAnswerButton.addSubview(answerBLabel)
+        thirdAnswerButton.addSubview(CLabel)
+        thirdAnswerButton.addSubview(answerCLabel)
+        fourthAnswerButton.addSubview(DLabel)
+        fourthAnswerButton.addSubview(answerDLabel)
+        
+        baseViewOne.addSubview(firstAnswerButton)
+        baseViewTwo.addSubview(secondAnswerButton)
+        baseViewThree.addSubview(thirdAnswerButton)
+        baseViewFour.addSubview(fourthAnswerButton)
+        
+        logoQuestionStack.addArrangedSubview(logoImageView)
+        logoQuestionStack.addArrangedSubview(questionLabel)
+        
+        questionPrizeStack.addArrangedSubview(questionNumberLabel)
+        questionPrizeStack.addArrangedSubview(timerLabel)
+        questionPrizeStack.addArrangedSubview(prizeLabel)
+        
+        answerButtonStack.addArrangedSubview(baseViewOne)
+        answerButtonStack.addArrangedSubview(baseViewTwo)
+        answerButtonStack.addArrangedSubview(baseViewThree)
+        answerButtonStack.addArrangedSubview(baseViewFour)
+        
+        hintButtonStack.addArrangedSubview(fiftyHintButton)
+        hintButtonStack.addArrangedSubview(peopleHintButton)
+        hintButtonStack.addArrangedSubview(phoneHintButton)
+        
+        setupConstraints()
+    }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
