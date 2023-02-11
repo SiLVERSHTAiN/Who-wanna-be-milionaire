@@ -26,7 +26,7 @@ final class MainGameView: UIView {
     
     private lazy var labelQuestionOne : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 1                        100 RUB"
+        label.text = "Вопрос 1                     100 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -40,7 +40,7 @@ final class MainGameView: UIView {
     
     private lazy var labelQuestionTwo : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 2                        200 RUB"
+        label.text = "Вопрос 2                     200 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -54,7 +54,7 @@ final class MainGameView: UIView {
     
     private lazy var labelQuestionThree : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 3                        300 RUB"
+        label.text = "Вопрос 3                     300 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -68,7 +68,7 @@ final class MainGameView: UIView {
     
     private lazy var labelQuestionFour : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 4                        500 RUB"
+        label.text = "Вопрос 4                     500 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -82,7 +82,7 @@ final class MainGameView: UIView {
     
     private lazy var labelQuestionFive : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 5                      1000 RUB"
+        label.text = "Вопрос 5                  1000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -96,7 +96,7 @@ final class MainGameView: UIView {
     
     private var labelQuestionSix : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 6                      2000 RUB"
+        label.text = "Вопрос 6                  2000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -110,7 +110,7 @@ final class MainGameView: UIView {
     
     private var labelQuestionSeven : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 7                      4000 RUB"
+        label.text = "Вопрос 7                  4000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -124,7 +124,7 @@ final class MainGameView: UIView {
     
     private var labelQuestionEight : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 8                      8000 RUB"
+        label.text = "Вопрос 8                  8000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -138,7 +138,7 @@ final class MainGameView: UIView {
     
     private var labelQuestionNine : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 9                    16000 RUB"
+        label.text = "Вопрос 9                16000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -152,7 +152,7 @@ final class MainGameView: UIView {
     
     private lazy var labelQuestionTen : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 10                  32000 RUB"
+        label.text = "Вопрос 10              32000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -166,7 +166,7 @@ final class MainGameView: UIView {
     
     private var labelQuestionEleven : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 11                  64000 RUB"
+        label.text = "Вопрос 11              64000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -180,7 +180,7 @@ final class MainGameView: UIView {
     
     private var labelQuestionTwelve : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 12                125000 RUB"
+        label.text = "Вопрос 12            125000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -194,7 +194,7 @@ final class MainGameView: UIView {
     
     private var labelQuestionThreeteen : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 13                250000 RUB"
+        label.text = "Вопрос 13            250000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -208,7 +208,7 @@ final class MainGameView: UIView {
     
     private var labelQuestionFourteen : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 14                500000 RUB"
+        label.text = "Вопрос 14            500000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -222,7 +222,7 @@ final class MainGameView: UIView {
     
     private var labelQuestionFiveteen : UILabel = {
         let label = UILabel()
-        label.text = "Вопрос 15                   1 Миллион"
+        label.text = "Вопрос 15              1 Миллион"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
