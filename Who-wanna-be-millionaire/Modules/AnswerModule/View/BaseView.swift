@@ -1,19 +1,20 @@
 //
-//  RulesView.swift
-//  Who-wanna-be-millionaire
+//  BaseView.swift
+//  ChallengeOneCode
 //
-//  Created by Aleksandr on 07.02.2023.
+//  Created by Ян Бойко on 10.02.2023.
 //
 
 import UIKit
 
-final class RulesView: UIView {
+class BaseView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupViews()
         constraintViews()
+        configureAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -21,7 +22,7 @@ final class RulesView: UIView {
     }
 }
 
-extension RulesView {
+@objc extension BaseView {
     
     func setupViews() {
         
@@ -30,4 +31,9 @@ extension RulesView {
     func constraintViews () {
         
     }
+    
+    func configureAppearance() {
+
+    }
 }
+
