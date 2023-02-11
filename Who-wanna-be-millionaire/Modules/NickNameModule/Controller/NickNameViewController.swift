@@ -42,12 +42,10 @@ extension NickNameViewController {
         view.endEditing(true)
     }
     
-//    private func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        view.endEditing(true)
-//    }
-    
-    private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    private func wrongFormatAlert() {
+        let alert = UIAlertController(title: "Wrong format!",
+                                      message: "Please enter your name",
+                                      preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
@@ -80,5 +78,14 @@ extension NickNameViewController {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0
         }
+    }
+    
+    @objc func buttonTapped(_ sender: UIButton) {
+        guard let nickName = nickNameView.nickName.text, !(nickName.isEmpty) else {
+            wrongFormatAlert()
+            return
+        }
+        
+        
     }
 }

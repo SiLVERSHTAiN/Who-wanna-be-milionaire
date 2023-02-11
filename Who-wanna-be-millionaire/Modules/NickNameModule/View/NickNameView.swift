@@ -15,7 +15,6 @@ final class NickNameView: UIView {
         nickName.delegate = self
         setupViews()
         constraintViews()
-        configureAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -43,7 +42,7 @@ final class NickNameView: UIView {
         return label
     }()
     
-    private lazy var nickName: CustomTextField = {
+    private(set) lazy var nickName: CustomTextField = {
         let name = CustomTextField()
         name.returnKeyType = .done
         name.backgroundColor = .white
@@ -60,13 +59,9 @@ final class NickNameView: UIView {
         register.setTitle(Resources.Texts.buttonText, for: .normal)
         register.setTitleColor(UIColor.white, for: .normal)
         register.titleLabel?.font = Resources.Fonts.setFont(name: .textAvenirFont, size: 28)
+        register.addTarget(nil, action: #selector(NickNameViewController.buttonTapped), for: .touchUpInside)
         return register
     }()
-    
-    static func getNickName(_ nickName: UITextField) -> String {
-        guard let nickName = nickName.text else { return "" }
-        return nickName
-    }
 }
 
 extension NickNameView: UITextFieldDelegate {
@@ -107,13 +102,10 @@ extension NickNameView: UITextFieldDelegate {
             
         ])
     }
-    
-    func configureAppearance() {
-        
-        backgroundColor = .white
-    }
   
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nickName.resignFirstResponder()
     }
+    
+    
 }
