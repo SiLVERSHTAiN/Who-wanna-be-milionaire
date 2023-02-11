@@ -30,7 +30,7 @@ class LogoAndLabelView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
- 
+        
         setupViews()
         setConstraints()
     }

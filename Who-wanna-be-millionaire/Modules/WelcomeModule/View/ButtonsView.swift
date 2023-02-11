@@ -11,7 +11,7 @@ class ButtonsView: UIView {
     private lazy var startAttributedString = NSMutableAttributedString(string: "")
     private lazy var roolsAttributedString = NSMutableAttributedString(string: "")
     
-    private lazy var rulesButton: UIButton = {
+    lazy var rulesButton: UIButton = {
         let button = UIButton(type: .system)
         let buttonTitleStr = NSMutableAttributedString(string: WelcomeConstants.Text.rulesButtonTitleText, attributes:attrs)
         roolsAttributedString.append(buttonTitleStr)
@@ -29,7 +29,7 @@ class ButtonsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+         
         setupViews()
         setConstraints()
     }

@@ -14,7 +14,6 @@ final class RulesView: UIView {
         
         setupViews()
         constraintViews()
-        configureAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -30,9 +29,5 @@ extension RulesView {
     
     func constraintViews () {
         
-    }
-    
-    func configureAppearance() {
-        backgroundColor = .red
     }
 }
