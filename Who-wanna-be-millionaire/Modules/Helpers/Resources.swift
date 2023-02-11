@@ -1,5 +1,5 @@
 //
-//  Ext + UIColor.swift
+//  Resources.swift
 //  Who-wanna-be-millionaire
 //
 //  Created by Aleksandr on 11.02.2023.
