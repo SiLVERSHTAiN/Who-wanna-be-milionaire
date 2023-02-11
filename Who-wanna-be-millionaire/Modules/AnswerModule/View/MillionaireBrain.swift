@@ -57,7 +57,6 @@ struct MillionaireBrain {
         }
         
         return [correctAnswer, secondAnswer]
-
     }
     
     func peopleHint(
@@ -69,7 +68,8 @@ struct MillionaireBrain {
             _ answerBLabel: UILabel,
             _ answerCLabel: UILabel,
             _ answerDLabel: UILabel
-    ) {
+    )
+    {
         let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         let correctAnswer = quiz[questionNumber].correctAnswer
         let answersArray: [String] = [correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer]
@@ -106,7 +106,8 @@ struct MillionaireBrain {
             _ answerBLabel: UILabel,
             _ answerCLabel: UILabel,
             _ answerDLabel: UILabel
-    ) {
+    )
+    {
         let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         let correctAnswer = quiz[questionNumber].correctAnswer
         let answersArray: [String] = [correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer]
@@ -133,6 +134,5 @@ struct MillionaireBrain {
             return
         }
     }
-    
 }
 

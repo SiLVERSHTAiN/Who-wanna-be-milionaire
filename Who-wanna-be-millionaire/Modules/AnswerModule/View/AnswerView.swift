@@ -105,6 +105,7 @@ class AnswerView: BaseView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     private lazy var answerALabel: UILabel = {
         let view = UILabel()
         view.text = "1111"
@@ -115,6 +116,7 @@ class AnswerView: BaseView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     private lazy var BLabel: UILabel = {
         let view = UILabel()
         view.text = "B"
@@ -125,6 +127,7 @@ class AnswerView: BaseView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     private lazy var answerBLabel: UILabel = {
         let view = UILabel()
         view.text = "2222"
@@ -135,6 +138,7 @@ class AnswerView: BaseView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     private lazy var CLabel: UILabel = {
         let view = UILabel()
         view.text = "C"
@@ -145,6 +149,7 @@ class AnswerView: BaseView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     private lazy var answerCLabel: UILabel = {
         let view = UILabel()
         view.text = "3333"
@@ -155,6 +160,7 @@ class AnswerView: BaseView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     private lazy var DLabel: UILabel = {
         let view = UILabel()
         view.text = "D"
@@ -165,6 +171,7 @@ class AnswerView: BaseView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     private lazy var answerDLabel: UILabel = {
         let view = UILabel()
         view.text = "4444"
@@ -227,7 +234,6 @@ class AnswerView: BaseView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
     
     func showFiftyFiftyHint(_ answers: [String], _ buttons: [UIButton], _ labels: [UILabel]) {
         if millionaireBrain.fiftyFiftyHintUsed {
@@ -300,10 +306,8 @@ class AnswerView: BaseView {
         default:
             return
         }
-        
     }
 
-    
     private lazy var logoQuestionStack: UIStackView = {
         let view = UIStackView()
         view.axis = .horizontal

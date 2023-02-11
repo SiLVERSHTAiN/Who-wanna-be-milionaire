@@ -12,7 +12,7 @@
 		2C26DF092997C9CF00211B88 /* MillionaireBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C26DF082997C9CF00211B88 /* MillionaireBrain.swift */; };
 		69D9C33F2997EEB10045F00B /* Ext + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C33E2997EEB10045F00B /* Ext + UIColor.swift */; };
 		69D9C3422997EF1D0045F00B /* Res.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C3412997EF1D0045F00B /* Res.swift */; };
-		69D9C3442997F7980045F00B /* timer-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 69D9C3432997F7980045F00B /* timer-sound.mp3 */; };
+		69D9C3462997FC7F0045F00B /* timer-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 69D9C3452997FC7F0045F00B /* timer-sound.mp3 */; };
 		69E69BA629954306006D45BA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E69BA529954306006D45BA /* CustomTextField.swift */; };
 		69FD29A0299174D000481D00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD299F299174D000481D00 /* AppDelegate.swift */; };
 		69FD29A2299174D000481D00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD29A1299174D000481D00 /* SceneDelegate.swift */; };
@@ -41,7 +41,7 @@
 		698C5F5C29920BA8000D8B61 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		69D9C33E2997EEB10045F00B /* Ext + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext + UIColor.swift"; sourceTree = "<group>"; };
 		69D9C3412997EF1D0045F00B /* Res.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Res.swift; sourceTree = "<group>"; };
-		69D9C3432997F7980045F00B /* timer-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "timer-sound.mp3"; path = "../../../../../../../../Downloads/timer-sound.mp3"; sourceTree = "<group>"; };
+		69D9C3452997FC7F0045F00B /* timer-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "timer-sound.mp3"; sourceTree = "<group>"; };
 		69E69BA529954306006D45BA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		69FD299C299174D000481D00 /* Who-wanna-be-millionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Who-wanna-be-millionaire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FD299F299174D000481D00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -279,7 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				69FD29EA2991792C00481D00 /* AnswerViewController.swift */,
-				69D9C3432997F7980045F00B /* timer-sound.mp3 */,
+				69D9C3452997FC7F0045F00B /* timer-sound.mp3 */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -392,7 +392,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69D9C3442997F7980045F00B /* timer-sound.mp3 in Resources */,
+				69D9C3462997FC7F0045F00B /* timer-sound.mp3 in Resources */,
 				69FD29AC299174D200481D00 /* LaunchScreen.storyboard in Resources */,
 				69FD29A9299174D200481D00 /* Assets.xcassets in Resources */,
 			);

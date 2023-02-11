@@ -13,7 +13,6 @@ final class MainGameView: UIView {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "background")
         return imageView
-        
     }()
     
     private lazy var gameLogo: UIImageView = {
@@ -35,7 +34,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private lazy var labelQuestionTwo : UILabel = {
@@ -49,7 +47,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private lazy var labelQuestionThree : UILabel = {
@@ -63,7 +60,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private lazy var labelQuestionFour : UILabel = {
@@ -77,7 +73,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private lazy var labelQuestionFive : UILabel = {
@@ -91,7 +86,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private var labelQuestionSix : UILabel = {
@@ -105,7 +99,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private var labelQuestionSeven : UILabel = {
@@ -119,7 +112,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private var labelQuestionEight : UILabel = {
@@ -133,7 +125,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private var labelQuestionNine : UILabel = {
@@ -147,7 +138,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private lazy var labelQuestionTen : UILabel = {
@@ -161,7 +151,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private var labelQuestionEleven : UILabel = {
@@ -175,7 +164,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private var labelQuestionTwelve : UILabel = {
@@ -189,7 +177,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private var labelQuestionThreeteen : UILabel = {
@@ -203,7 +190,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private var labelQuestionFourteen : UILabel = {
@@ -217,7 +203,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private var labelQuestionFiveteen : UILabel = {
@@ -231,7 +216,6 @@ final class MainGameView: UIView {
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
-        
     }()
     
     private lazy var stack : UIStackView = {
@@ -262,34 +246,25 @@ extension MainGameView {
         setupView(backgroundImageView)
         setupView(stack)
         setupView(gameLogo)
-        //        [labelQuestionFiveteen, labelQuestionFourteen, labelQuestionThreeteen, labelQuestionTwelve, labelQuestionEleven, labelQuestionTen, labelQuestionNine, labelQuestionEight, labelQuestionSeven, labelQuestionSix, labelQuestionFive, labelQuestionFour, labelQuestionThree, labelQuestionTwo, labelQuestionOne].forEach(stack.addArrangedSubview)
         
         stack.addArrangedSubviews([labelQuestionFiveteen, labelQuestionFourteen, labelQuestionThreeteen, labelQuestionTwelve, labelQuestionEleven, labelQuestionTen, labelQuestionNine, labelQuestionEight, labelQuestionSeven, labelQuestionSix, labelQuestionFive, labelQuestionFour, labelQuestionThree, labelQuestionTwo, labelQuestionOne])
-        
     }
-    
-    
-    
-    
+
     func constraintViews () {
         NSLayoutConstraint.activate([
-            
             backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
             backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             backgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             backgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            
             gameLogo.centerXAnchor.constraint(equalTo: centerXAnchor),
             gameLogo.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
             gameLogo.bottomAnchor.constraint(equalTo: stack.topAnchor, constant: -8),
             
-            
             stack.centerXAnchor.constraint(equalTo: centerXAnchor),
             stack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 42),
             stack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -43),
-            stack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -13),
+            stack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -13),
         ])
-        
     }
 }

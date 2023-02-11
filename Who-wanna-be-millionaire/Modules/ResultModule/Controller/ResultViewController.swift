@@ -24,8 +24,6 @@ class ResultViewController: UIViewController {
         backgroundImageView.frame = view.frame
         
         NSLayoutConstraint.activate([
-            
-            
             resultView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             resultView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             resultView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -39,5 +37,4 @@ class ResultViewController: UIViewController {
         view.setupView(resultView)
         constraintViews()
     }
-    
 }

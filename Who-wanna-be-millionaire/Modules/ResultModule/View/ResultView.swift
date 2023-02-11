@@ -39,7 +39,7 @@ final class ResultView: UIView {
     }()
     
     lazy var playAgainButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.setTitle(Res.Text.playAgain, for: .normal)
         button.titleLabel?.font = Res.Fonts.setFont(name: .textAvenirFont, size: 36)
         button.setTitleColor(.white, for: .normal)
@@ -64,7 +64,6 @@ final class ResultView: UIView {
 extension ResultView {
     
     func setupViews() {
-        
         setupView(logoImageView)
         setupView(descriptionTitleLabel)
         setupView(resultTitleLabel)
@@ -72,9 +71,7 @@ extension ResultView {
     }
     
     func constraintViews () {
-        
         NSLayoutConstraint.activate([
-            
             logoImageView.heightAnchor.constraint(equalToConstant: 201),
             logoImageView.widthAnchor.constraint(equalToConstant: 201),
             logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
@@ -92,7 +89,6 @@ extension ResultView {
             playAgainButton.widthAnchor.constraint(equalToConstant: 300),
             playAgainButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
             playAgainButton.centerXAnchor.constraint(equalTo: centerXAnchor)
-            
         ])
     }
     
