@@ -147,6 +147,7 @@
 			children = (
 				69FD29B6299175C700481D00 /* Ext + UIView.swift */,
 				69FD29B82991761600481D00 /* Ext + UIStackView.swift */,
+				DDF8456B2993E8D60019AAB8 /* Ext + UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -429,6 +430,7 @@
 				69FD29A2299174D000481D00 /* SceneDelegate.swift in Sources */,
 				69FD29E82991789000481D00 /* ResultView.swift in Sources */,
 				69FD29E62991787800481D00 /* ResultViewController.swift in Sources */,
+				DDF8456C2993E8D60019AAB8 /* Ext + UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
