@@ -16,6 +16,24 @@ class MillionaireBrain {
     var peopleHintSsed = false
     var phoneHintUsed = false
     
+    let questionArray = [
+    QuestionNumber(numberOfQuestion: "Вопрос 1", sum: "100р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 2", sum: "200р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 3", sum: "300р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 4", sum: "500р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 5", sum: "1000р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 6", sum: "2000р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 7", sum: "4000р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 8", sum: "8000р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 9", sum: "16.000р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 10", sum: "32.000р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 11", sum: "64.000р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 12", sum: "125.000р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 13", sum: "250.000р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 14", sum: "500.000р"),
+    QuestionNumber(numberOfQuestion: "Вопрос 15", sum: "1.000.000р")
+    ]
+    
     let quiz = [
         Question(
                     question: "What sort of animal is Walt Disney's Dumbo?",
@@ -121,15 +139,21 @@ class MillionaireBrain {
     }
     
     func fiftyFiftyHint() -> [String] {
-        let correctAnswer = quiz[questionNumber].correctAnswer
-        var secondAnswer = quiz[questionNumber].correctAnswer
         
-        while secondAnswer == correctAnswer {
-            secondAnswer = quiz[questionNumber].answer[Int.random(in: 0...3)]
-            print(secondAnswer)
+        if !fiftyFiftyHintUsed {
+            
+            let correctAnswer = quiz[questionNumber].correctAnswer
+            var secondAnswer = quiz[questionNumber].correctAnswer
+            
+            while secondAnswer == correctAnswer {
+                secondAnswer = quiz[questionNumber].answer[Int.random(in: 0...3)]
+                print(secondAnswer)
+            }
+            
+            return [correctAnswer, secondAnswer]
+        } else {
+            return ["50/50"]
         }
-        
-        return [correctAnswer, secondAnswer]
     }
     
     func peopleHint(
@@ -143,7 +167,7 @@ class MillionaireBrain {
             _ answerDLabel: UILabel
     )
     {
-        let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
         let correctAnswer = quiz[questionNumber].correctAnswer
         let answersArray: [String] = [correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer]
         let randomAnswer = answersArray[Int.random(in: 0...6)]
@@ -181,7 +205,7 @@ class MillionaireBrain {
             _ answerDLabel: UILabel
     )
     {
-        let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+        let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
         let correctAnswer = quiz[questionNumber].correctAnswer
         let answersArray: [String] = [correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer]
         let randomAnswer = answersArray[Int.random(in: 0...6)]

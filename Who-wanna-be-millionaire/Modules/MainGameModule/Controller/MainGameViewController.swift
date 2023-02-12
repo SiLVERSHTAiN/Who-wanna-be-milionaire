@@ -5,18 +5,12 @@
 //  Created by Aleksandr on 07.02.2023.
 //
 
-protocol passQuestionNumberDelegate {
-   mutating func passQuestionNumber(number: Int)
-}
-
 import UIKit
 
 class MainGameViewController: UIViewController {
     
     let mainGameView = MainGameView()
-    let questionNumber = MillionaireBrain.shared
-    
-    var delegate: passQuestionNumberDelegate?
+    let updateTimer = MillionaireBrain.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +24,10 @@ class MainGameViewController: UIViewController {
             AnswerViewController.modalTransitionStyle = .crossDissolve
             present(AnswerViewController, animated: true, completion: nil)
         }
-        
-        delegate?.passQuestionNumber(number: questionNumber.questionNumber)
+    }
+    
+    override func viewWillAppear (_ animated: Bool) {
+        updateTimer.numberOfSeconds = 30
     }
 }
 extension MainGameViewController {

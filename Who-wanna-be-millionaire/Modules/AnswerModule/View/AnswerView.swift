@@ -57,7 +57,7 @@ class AnswerView: BaseView {
     
     private lazy var questionNumberLabel: UILabel = {
         let view = UILabel()
-        view.text = "Question 1"
+        view.text = millionaireBrain.questionArray[millionaireBrain.questionNumber].numberOfQuestion
         view.textColor = .white
         view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .natural
@@ -85,7 +85,7 @@ class AnswerView: BaseView {
     
     private lazy var prizeLabel: UILabel = {
         let view = UILabel()
-        view.text = "250 RUB"
+        view.text = millionaireBrain.questionArray[millionaireBrain.questionNumber].sum
         view.textColor = .white
         view.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)
         view.textAlignment = .right
@@ -241,7 +241,7 @@ class AnswerView: BaseView {
             return
         } else {
             millionaireBrain.fiftyFiftyHintUsed = true
-            let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
+            let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
             var i = 0
             for button in buttons {
                 if answers[0] != button.currentTitle! && answers[1] != button.currentTitle! {

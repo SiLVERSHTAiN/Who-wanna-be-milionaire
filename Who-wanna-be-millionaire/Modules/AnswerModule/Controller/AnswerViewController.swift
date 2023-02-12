@@ -13,6 +13,7 @@ class AnswerViewController: UIViewController {
     var millionaireBrain = MillionaireBrain.shared
     var player: AVAudioPlayer!
     var timer = Timer()
+    var updateTimer = Timer()
     var answerView = AnswerView()
     
     var correctAnswerImage = UIImage(named: "Rectangle green")
@@ -23,6 +24,15 @@ class AnswerViewController: UIViewController {
         super.viewDidLoad()
         view.setupView(answerView)
         constraintViews()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
+//            playSound(soundName: "timer-sound")
+//            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
+//        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        updateTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: false)
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
             playSound(soundName: "timer-sound")
             timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
@@ -36,6 +46,10 @@ class AnswerViewController: UIViewController {
             answerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             answerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+    }
+    
+    @objc func updateTimerLabel() {
+        millionaireBrain.numberOfSeconds = 30
     }
     
     @objc func updateCounter() {

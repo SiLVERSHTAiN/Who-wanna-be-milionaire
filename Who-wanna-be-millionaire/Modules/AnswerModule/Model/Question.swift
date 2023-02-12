@@ -19,3 +19,8 @@ struct Question {
     }
 }
 
+struct QuestionNumber {
+    let numberOfQuestion: String
+    let sum: String
+}
+
