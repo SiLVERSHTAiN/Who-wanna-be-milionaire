@@ -9,6 +9,8 @@ import UIKit
 import AVFoundation
 
 class AnswerViewController: UIViewController {
+    
+    //static let shared = AnswerViewController()
 
     var millionaireBrain = MillionaireBrain.shared
     var player: AVAudioPlayer!

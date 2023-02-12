@@ -257,7 +257,11 @@ class AnswerView: BaseView {
         let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         view.setTitle("50/50", for: .normal)
         view.setTitleColor(color, for: .normal)
-        view.setBackgroundImage(fiftyBackgroundImage, for: .normal)
+        if MillionaireBrain.shared.fiftyFiftyHintUsed {
+            view.setBackgroundImage(fiftyDisableBackgroundImage, for: .normal)
+        } else {
+            view.setBackgroundImage(fiftyBackgroundImage, for: .normal)
+        }
         view.makeSystem(view)
         view.addTarget(self, action: #selector(hintButtonTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -269,7 +273,11 @@ class AnswerView: BaseView {
         let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         view.setTitle("people", for: .normal)
         view.setTitleColor(color, for: .normal)
-        view.setBackgroundImage(peopleBackgroundImage, for: .normal)
+        if MillionaireBrain.shared.peopleHintUsed {
+            view.setBackgroundImage(peopleDisableBackgroundImage, for: .normal)
+        } else {
+            view.setBackgroundImage(peopleBackgroundImage, for: .normal)
+        }
         view.makeSystem(view)
         view.addTarget(self, action: #selector(hintButtonTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -281,7 +289,11 @@ class AnswerView: BaseView {
         let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         view.setTitle("phone", for: .normal)
         view.setTitleColor(color, for: .normal)
-        view.setBackgroundImage(phoneBackgroundImage, for: .normal)
+        if MillionaireBrain.shared.phoneHintUsed {
+            view.setBackgroundImage(phoneDisableBackgroundImage, for: .normal)
+        } else {
+            view.setBackgroundImage(phoneBackgroundImage, for: .normal)
+        }
         view.makeSystem(view)
         view.addTarget(self, action: #selector(hintButtonTapped), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -298,12 +310,15 @@ class AnswerView: BaseView {
             let answers = millionaireBrain.fiftyFiftyHint()
             print(answers)
             showFiftyFiftyHint(answers, answerButtonsArray, answerLabelsArray)
+            MillionaireBrain.shared.fiftyFiftyHintUsed = true
         case "people":
             sender.setBackgroundImage(peopleDisableBackgroundImage, for: .normal)
             millionaireBrain.peopleHint(firstAnswerButton, secondAnswerButton, thirdAnswerButton, fourthAnswerButton, answerALabel, answerBLabel, answerCLabel, answerDLabel)
+            MillionaireBrain.shared.peopleHintUsed = true
         case "phone":
             sender.setBackgroundImage(phoneDisableBackgroundImage, for: .normal)
             millionaireBrain.phoneHint(firstAnswerButton, secondAnswerButton, thirdAnswerButton, fourthAnswerButton, answerALabel, answerBLabel, answerCLabel, answerDLabel)
+            MillionaireBrain.shared.phoneHintUsed = true
         default:
             return
         }
