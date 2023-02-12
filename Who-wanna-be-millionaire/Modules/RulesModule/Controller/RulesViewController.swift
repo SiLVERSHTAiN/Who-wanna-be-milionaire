@@ -30,7 +30,7 @@ class RulesViewController: UIViewController {
         transition.subtype = CATransitionSubtype.fromLeft
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         view.window!.layer.add(transition, forKey: kCATransition)
-        let welcomeViewController = NickNameViewController()
+        let welcomeViewController = WelcomeViewController()
         welcomeViewController.modalPresentationStyle = .fullScreen
         present(welcomeViewController, animated: false, completion: nil)
     }

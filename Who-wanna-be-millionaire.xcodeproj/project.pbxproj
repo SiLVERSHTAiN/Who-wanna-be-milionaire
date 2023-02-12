@@ -13,6 +13,10 @@
 		69D9C33F2997EEB10045F00B /* Ext + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C33E2997EEB10045F00B /* Ext + UIColor.swift */; };
 		69D9C3422997EF1D0045F00B /* Res.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C3412997EF1D0045F00B /* Res.swift */; };
 		69D9C3462997FC7F0045F00B /* timer-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 69D9C3452997FC7F0045F00B /* timer-sound.mp3 */; };
+		69D9C34C29989DB60045F00B /* WelcomeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C34B29989DB60045F00B /* WelcomeConstants.swift */; };
+		69D9C34E29989DDC0045F00B /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C34D29989DDC0045F00B /* ButtonsView.swift */; };
+		69D9C35029989DF30045F00B /* LogoAndLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C34F29989DF30045F00B /* LogoAndLabelView.swift */; };
+		69D9C35229989E0F0045F00B /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D9C35129989E0F0045F00B /* WelcomeViewController.swift */; };
 		69E69BA629954306006D45BA /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E69BA529954306006D45BA /* CustomTextField.swift */; };
 		69FD29A0299174D000481D00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD299F299174D000481D00 /* AppDelegate.swift */; };
 		69FD29A2299174D000481D00 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD29A1299174D000481D00 /* SceneDelegate.swift */; };
@@ -42,6 +46,10 @@
 		69D9C33E2997EEB10045F00B /* Ext + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext + UIColor.swift"; sourceTree = "<group>"; };
 		69D9C3412997EF1D0045F00B /* Res.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Res.swift; sourceTree = "<group>"; };
 		69D9C3452997FC7F0045F00B /* timer-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "timer-sound.mp3"; sourceTree = "<group>"; };
+		69D9C34B29989DB60045F00B /* WelcomeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeConstants.swift; sourceTree = "<group>"; };
+		69D9C34D29989DDC0045F00B /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
+		69D9C34F29989DF30045F00B /* LogoAndLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoAndLabelView.swift; sourceTree = "<group>"; };
+		69D9C35129989E0F0045F00B /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		69E69BA529954306006D45BA /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		69FD299C299174D000481D00 /* Who-wanna-be-millionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Who-wanna-be-millionaire.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69FD299F299174D000481D00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +98,41 @@
 				69D9C3412997EF1D0045F00B /* Res.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		69D9C34729989CF60045F00B /* WelcomeModules */ = {
+			isa = PBXGroup;
+			children = (
+				69D9C34829989D3F0045F00B /* Model */,
+				69D9C34929989D720045F00B /* View */,
+				69D9C34A29989D790045F00B /* Controller */,
+			);
+			path = WelcomeModules;
+			sourceTree = "<group>";
+		};
+		69D9C34829989D3F0045F00B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69D9C34B29989DB60045F00B /* WelcomeConstants.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		69D9C34929989D720045F00B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69D9C34D29989DDC0045F00B /* ButtonsView.swift */,
+				69D9C34F29989DF30045F00B /* LogoAndLabelView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		69D9C34A29989D790045F00B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				69D9C35129989E0F0045F00B /* WelcomeViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		69FD2993299174D000481D00 = {
@@ -152,6 +195,7 @@
 		69FD29BA2991766B00481D00 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				69D9C34729989CF60045F00B /* WelcomeModules */,
 				69D9C3402997EEED0045F00B /* Helper */,
 				69FD29E1299177B600481D00 /* ResultModule */,
 				69FD29DD2991779F00481D00 /* AnswerModule */,
@@ -405,12 +449,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D9C35029989DF30045F00B /* LogoAndLabelView.swift in Sources */,
 				69D9C3422997EF1D0045F00B /* Res.swift in Sources */,
 				69FD29F7299179C900481D00 /* RulesViewController.swift in Sources */,
 				B33BA97A29943C7800E5134A /* RulesTextView.swift in Sources */,
 				69FD29F12991797600481D00 /* MainGameView.swift in Sources */,
 				69FD29A0299174D000481D00 /* AppDelegate.swift in Sources */,
 				69E69BA629954306006D45BA /* CustomTextField.swift in Sources */,
+				69D9C34E29989DDC0045F00B /* ButtonsView.swift in Sources */,
 				69FD29F5299179AA00481D00 /* NickNameView.swift in Sources */,
 				69FD29B7299175C700481D00 /* Ext + UIView.swift in Sources */,
 				B3568EFE29941ADA0001624C /* RulesResources.swift in Sources */,
@@ -418,9 +464,11 @@
 				69FD29F32991799B00481D00 /* NickNameViewController.swift in Sources */,
 				69FD29B92991761600481D00 /* Ext + UIStackView.swift in Sources */,
 				69FD29EB2991792C00481D00 /* AnswerViewController.swift in Sources */,
+				69D9C34C29989DB60045F00B /* WelcomeConstants.swift in Sources */,
 				69D9C33F2997EEB10045F00B /* Ext + UIColor.swift in Sources */,
 				69FD29EF2991796400481D00 /* MainGameViewController.swift in Sources */,
 				B33BA9782994213F00E5134A /* UpperElementsView.swift in Sources */,
+				69D9C35229989E0F0045F00B /* WelcomeViewController.swift in Sources */,
 				69FD29ED2991793D00481D00 /* AnswerView.swift in Sources */,
 				69FD29A2299174D000481D00 /* SceneDelegate.swift in Sources */,
 				2C26DF052997C97400211B88 /* BaseView.swift in Sources */,

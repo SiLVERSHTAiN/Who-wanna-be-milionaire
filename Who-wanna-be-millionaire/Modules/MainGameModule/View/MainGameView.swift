@@ -88,7 +88,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private var labelQuestionSix : UILabel = {
+    private lazy var labelQuestionSix : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 6                  2000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -101,7 +101,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private var labelQuestionSeven : UILabel = {
+    private lazy var labelQuestionSeven : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 7                  4000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -114,7 +114,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private var labelQuestionEight : UILabel = {
+    private lazy var labelQuestionEight : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 8                  8000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -127,7 +127,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private var labelQuestionNine : UILabel = {
+    private lazy var labelQuestionNine : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 9                16000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -153,7 +153,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private var labelQuestionEleven : UILabel = {
+    private lazy var labelQuestionEleven : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 11              64000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -166,7 +166,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private var labelQuestionTwelve : UILabel = {
+    private lazy var labelQuestionTwelve : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 12            125000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -179,7 +179,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private var labelQuestionThreeteen : UILabel = {
+    private lazy var labelQuestionThreeteen : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 13            250000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -192,7 +192,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private var labelQuestionFourteen : UILabel = {
+    private lazy var labelQuestionFourteen : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 14            500000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -205,7 +205,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private var labelQuestionFiveteen : UILabel = {
+    private lazy var labelQuestionFiveteen : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 15              1 Миллион"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -227,6 +227,12 @@ final class MainGameView: UIView {
         return stack
     }()
     
+    private lazy var arrayOfLabels: [UILabel] = [
+        labelQuestionOne, labelQuestionTwo, labelQuestionThree, labelQuestionFour,
+        labelQuestionFive, labelQuestionSix, labelQuestionSeven, labelQuestionEight,
+        labelQuestionNine, labelQuestionTen, labelQuestionEleven, labelQuestionTwelve,
+        labelQuestionThreeteen, labelQuestionFourteen, labelQuestionFiveteen
+    ]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -242,15 +248,19 @@ final class MainGameView: UIView {
 }
 extension MainGameView {
     
-    func setupViews() {
+    func getLabelArray() -> [UILabel] {
+        return arrayOfLabels
+    }
+    
+    private func setupViews() {
         setupView(backgroundImageView)
         setupView(stack)
         setupView(gameLogo)
         
-        stack.addArrangedSubviews([labelQuestionFiveteen, labelQuestionFourteen, labelQuestionThreeteen, labelQuestionTwelve, labelQuestionEleven, labelQuestionTen, labelQuestionNine, labelQuestionEight, labelQuestionSeven, labelQuestionSix, labelQuestionFive, labelQuestionFour, labelQuestionThree, labelQuestionTwo, labelQuestionOne])
+        stack.addArrangedSubviews(arrayOfLabels.reversed())
     }
 
-    func constraintViews () {
+    private func constraintViews () {
         NSLayoutConstraint.activate([
             backgroundImageView.topAnchor.constraint(equalTo: topAnchor),
             backgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
