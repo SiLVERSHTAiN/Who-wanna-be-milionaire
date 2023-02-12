@@ -32,7 +32,7 @@ struct MillionaireBrain {
         d.text = quiz[questionNumber].answers[3]
     }
     
-    mutating func checkAnswer(_ button: UIButton) -> Bool {
+    mutating func checkAnswer(_ button: UIButton) -> (UIButton, Bool) {
         let title = button.currentTitle ?? "Error"
         switch title {
         case quiz[questionNumber].correctAnswer:
@@ -40,10 +40,10 @@ struct MillionaireBrain {
             if questionNumber < quiz.count {
                 questionNumber += 1
             }
-            return true
+            return (button, true)
         default:
             print("Ответ не верный")
-            return false
+            return (button, false)
         }
     }
     

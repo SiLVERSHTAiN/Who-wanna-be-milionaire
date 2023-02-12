@@ -16,6 +16,16 @@ class MainGameViewController: UIViewController {
         view.backgroundColor = .red
         setupViews()
         setConstraints()
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
+            let AnswerViewController = AnswerViewController()
+            AnswerViewController.modalPresentationStyle = .fullScreen
+            AnswerViewController.modalTransitionStyle = .crossDissolve
+            present(AnswerViewController, animated: true, completion: nil)
+        }
+        
+        
     }
 }
 extension MainGameViewController {
