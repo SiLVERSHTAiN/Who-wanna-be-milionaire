@@ -7,32 +7,105 @@
 
 import UIKit
 
-struct MillionaireBrain {
-    
-    var questionNumber = 0
+class MillionaireBrain {
+        
+    static let shared = MillionaireBrain()
+    private(set) var questionNumber = 0
     var numberOfSeconds = 30
     var fiftyFiftyHintUsed = false
     var peopleHintSsed = false
     var phoneHintUsed = false
     
     let quiz = [
-        Question(q: "Как называют беспилотный летательный аппарат?", a: ["Дрон", "Фаэтон", "Махаон", "Десептикон"], correctAnswer: "Дрон"),
-        Question(q: "В какой игре не используют мяч?", a: ["Волейбол", "Бейсбол", "Теннис", "Керлинг"], correctAnswer: "Керлинг"),
-        Question(q: "Что в сказках было семимильным?", a: ["Ковер", "Одежда", "Сапоги", "Мотоцикл"], correctAnswer: "Ковер")
+        Question(
+                    question: "What sort of animal is Walt Disney's Dumbo?",
+                    answer: ["Deer", "Rabbit", "Elephant", "Donkey"],
+                    correctAnswer: "Elephant"
+                ),
+                Question(
+                    question: "What was the name of the Spanish waiter in the TV sitcom \"Fawlty Towers\"?",
+                    answer: ["Manuel", "Pedro", "Alfonso", "Javier"],
+                    correctAnswer: "Manuel"
+                ),
+                Question(
+                    question: "Which battles took place between the Royal Houses of York and Lancaster?",
+                    answer: ["Thirty Years War", "Hundred Years War", "War of the Roses", "English Civil War"],
+                    correctAnswer: "War of the Roses"
+                ),
+                Question(
+                    question: "Which former Beatle narrated the TV adventures of Thomas the Tank Engine?",
+                    answer: ["John Lennon", "Paul McCartney", "George Harrison", "Ringo Starr"],
+                    correctAnswer: "Ringo Starr"
+                ),
+                Question(
+                    question: "Queen Anne was the daughter of which English Monarch?",
+                    answer: ["James II", "Henry VIII", "Victoria", "William I"],
+                    correctAnswer: "James II"
+                ),
+                Question(
+                    question: "Who composed \"Rhapsody in Blue\"?",
+                    answer: ["Irving Berlin", "George Gershwin", "Aaron Copland", "Cole Porter"],
+                    correctAnswer: "George Gershwin"
+                ),
+                Question(
+                    question: "What is the Celsius equivalent of 77 degrees Fahrenheit?",
+                    answer: ["15", "20", "25", "30"],
+                    correctAnswer: "25"
+                ),
+                Question(
+                    question: "Suffolk Punch and Hackney are types of what?",
+                    answer: ["Carriage", "Wrestling style", "Cocktail", "Horse"],
+                    correctAnswer: "Horse"
+                ),
+                Question(
+                    question: "Which Shakespeare play features the line \"Neither a borrower nor a lender be\"?",
+                    answer: ["Hamlet", "Macbeth", "Othello", "The Merchant of Venice"],
+                    correctAnswer: "Hamlet"
+                ),
+                Question(
+                    question: "Which is the largest city in the USA's largest state?",
+                    answer: ["Dallas", "Los Angeles", "New York", "Anchorage"],
+                    correctAnswer: "Anchorage"
+                ),
+                Question(
+                    question: "The word \"aristocracy\" literally means power in the hands of whom?",
+                    answer: ["The few", "The best", "The barons", "The rich"],
+                    correctAnswer: "The best"
+                ),
+                Question(
+                    question: "Where would a \"peruke\" be worn?",
+                    answer: ["Around the neck", "On the head", "Around the waist", "On the wrist"],
+                    correctAnswer: "On the head"
+                ),
+                Question(
+                    question: "In which palace was Queen Elizabeth I born?",
+                    answer: ["Greenwich", "Richmond", "Hampton Court", "Kensington"],
+                    correctAnswer: "Greenwich"
+                ),
+                Question(
+                    question: "From which author's work did scientists take the word \"quark\"?",
+                    answer: ["Lewis Carroll", "Edward Lear", "James Joyce", "Aldous Huxley"],
+                    correctAnswer: "James Joyce"
+                ),
+                Question(
+                    question: "Which of these islands was ruled by Britain from 1815 until 1864?",
+                    answer: ["Crete", "Cyprus", "Corsica", "Corfu"],
+                    correctAnswer: "Corfu"
+                )
     ]
    
     func getQuestionText() -> String {
-        return quiz[questionNumber].text
+        return quiz[questionNumber].question
     }
     
     func getAnswers(_ a: UILabel, _ b: UILabel, _ c: UILabel, _ d: UILabel) {
-        a.text = quiz[questionNumber].answers[0]
-        b.text = quiz[questionNumber].answers[1]
-        c.text = quiz[questionNumber].answers[2]
-        d.text = quiz[questionNumber].answers[3]
+        a.text = quiz[questionNumber].answer[0]
+        b.text = quiz[questionNumber].answer[1]
+        c.text = quiz[questionNumber].answer[2]
+        d.text = quiz[questionNumber].answer[3]
     }
     
-    mutating func checkAnswer(_ button: UIButton) -> Bool {
+    func checkAnswer(_ button: UIButton) -> (UIButton, Bool) {
         let title = button.currentTitle ?? "Error"
         switch title {
         case quiz[questionNumber].correctAnswer:
@@ -40,10 +113,10 @@ struct MillionaireBrain {
             if questionNumber < quiz.count {
                 questionNumber += 1
             }
-            return true
+            return (button, true)
         default:
             print("Ответ не верный")
-            return false
+            return (button, false)
         }
     }
     
@@ -52,7 +125,7 @@ struct MillionaireBrain {
         var secondAnswer = quiz[questionNumber].correctAnswer
         
         while secondAnswer == correctAnswer {
-            secondAnswer = quiz[questionNumber].answers[Int.random(in: 0...3)]
+            secondAnswer = quiz[questionNumber].answer[Int.random(in: 0...3)]
             print(secondAnswer)
         }
         

@@ -9,7 +9,7 @@ import UIKit
 
 class AnswerView: BaseView {
     
-    var millionaireBrain = MillionaireBrain()
+    var millionaireBrain = MillionaireBrain.shared
     
     lazy var answerButtonsArray: [UIButton] = [firstAnswerButton, secondAnswerButton, thirdAnswerButton, fourthAnswerButton]
     lazy var answerLabelsArray: [UILabel] = [answerALabel, answerBLabel, answerCLabel, answerDLabel]
@@ -185,10 +185,11 @@ class AnswerView: BaseView {
     
     private lazy var firstAnswerButton: UIButton = {
         let view = UIButton()
-        let answer = millionaireBrain.quiz[millionaireBrain.questionNumber].answers[0]
+        let answer = millionaireBrain.quiz[millionaireBrain.questionNumber].answer[0]
         let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         view.setBackgroundImage(buttonBackgroundImage, for: .normal)
         view.setTitle(answer, for: .normal)
+        print(view.currentTitle!)
         view.setTitleColor(color, for: .normal)
         view.makeSystem(view)
         view.addTarget(nil, action: #selector(AnswerViewController.answerButtonTapped), for: .touchUpInside)
@@ -198,7 +199,7 @@ class AnswerView: BaseView {
     
     private lazy var secondAnswerButton: UIButton = {
         let view = UIButton()
-        let answer = millionaireBrain.quiz[millionaireBrain.questionNumber].answers[1]
+        let answer = millionaireBrain.quiz[millionaireBrain.questionNumber].answer[1]
         let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         view.setBackgroundImage(buttonBackgroundImage, for: .normal)
         view.setTitle(answer, for: .normal)
@@ -211,7 +212,7 @@ class AnswerView: BaseView {
     
     private lazy var thirdAnswerButton: UIButton = {
         let view = UIButton()
-        let answer = millionaireBrain.quiz[millionaireBrain.questionNumber].answers[2]
+        let answer = millionaireBrain.quiz[millionaireBrain.questionNumber].answer[2]
         let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         view.setBackgroundImage(buttonBackgroundImage, for: .normal)
         view.setTitle(answer, for: .normal)
@@ -224,7 +225,7 @@ class AnswerView: BaseView {
     
     private lazy var fourthAnswerButton: UIButton = {
         let view = UIButton()
-        let answer = millionaireBrain.quiz[millionaireBrain.questionNumber].answers[3]
+        let answer = millionaireBrain.quiz[millionaireBrain.questionNumber].answer[3]
         let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0)
         view.setBackgroundImage(buttonBackgroundImage, for: .normal)
         view.setTitle(answer, for: .normal)
@@ -466,4 +467,5 @@ class AnswerView: BaseView {
         ])
     }
 }
+
 

@@ -10,10 +10,14 @@ import AVFoundation
 
 class AnswerViewController: UIViewController {
 
-    var millionaireBrain = MillionaireBrain()
+    var millionaireBrain = MillionaireBrain.shared
     var player: AVAudioPlayer!
     var timer = Timer()
     var answerView = AnswerView()
+    
+    var correctAnswerImage = UIImage(named: "Rectangle green")
+    var waitAnswerImage = UIImage(named: "Rectangle yellow")
+    var wrongAnswerImage = UIImage(named: "Rectangle red")
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +46,7 @@ class AnswerViewController: UIViewController {
         } else {
             timer.invalidate()
             let ResultViewController = ResultViewController()
-            ResultViewController.modalPresentationStyle = .fullScreen
-            ResultViewController.modalTransitionStyle = .crossDissolve
-            present(ResultViewController, animated: true, completion: nil)
+            navigationController?.pushViewController(ResultViewController, animated: true)
         }
     }
     
@@ -59,17 +61,42 @@ class AnswerViewController: UIViewController {
         player.stop()
         let checkAnswer = millionaireBrain.checkAnswer(sender)
         
-        if checkAnswer {
-            let MainGameViewController = MainGameViewController()
-            MainGameViewController.modalPresentationStyle = .fullScreen
-            MainGameViewController.modalTransitionStyle = .crossDissolve
-            present(MainGameViewController, animated: true, completion: nil)
+        if checkAnswer.1 {
+            playSound(soundName: "waitForInspection")
+            checkAnswer.0.setBackgroundImage(waitAnswerImage, for: .normal)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
+                player.stop()
+                playSound(soundName: "correctAnswer")
+                checkAnswer.0.setBackgroundImage(correctAnswerImage, for: .normal)
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [self] in
+                player.stop()
+                let MainGameViewController = MainGameViewController()
+                MainGameViewController.modalPresentationStyle = .fullScreen
+                MainGameViewController.modalTransitionStyle = .crossDissolve
+                present(MainGameViewController, animated: true, completion: nil)
+            }
         } else {
-            let ResultViewController = ResultViewController()
-            ResultViewController.modalPresentationStyle = .fullScreen
-            ResultViewController.modalTransitionStyle = .crossDissolve
-            present(ResultViewController, animated: true, completion: nil)
+            playSound(soundName: "waitForInspection")
+            checkAnswer.0.setBackgroundImage(waitAnswerImage, for: .normal)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
+                player.stop()
+                checkAnswer.0.setBackgroundImage(wrongAnswerImage, for: .normal)
+                playSound(soundName: "wrongAnswer")
+            }
+            
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [self] in
+                let ResultViewController = ResultViewController()
+                ResultViewController.modalPresentationStyle = .fullScreen
+                ResultViewController.modalTransitionStyle = .crossDissolve
+                present(ResultViewController, animated: true, completion: nil)
+            }
         }
     }
 }
+
 

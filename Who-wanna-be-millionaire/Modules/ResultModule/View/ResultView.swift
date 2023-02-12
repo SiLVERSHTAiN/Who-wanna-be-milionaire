@@ -44,6 +44,7 @@ final class ResultView: UIView {
         button.titleLabel?.font = Res.Fonts.setFont(name: .textAvenirFont, size: 36)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .init(hexString: "#34B83A")
+        button.addTarget(nil, action: #selector(ResultViewController.playAgainTapped), for: .touchUpInside)
         button.layer.cornerRadius = 20
         return button
     }()

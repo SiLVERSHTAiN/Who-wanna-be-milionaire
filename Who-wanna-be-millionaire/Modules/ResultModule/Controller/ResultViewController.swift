@@ -37,4 +37,11 @@ class ResultViewController: UIViewController {
         view.setupView(resultView)
         constraintViews()
     }
+    
+    @objc func playAgainTapped(_ sender: UIButton) {
+        let welcomeViewController = WelcomeViewController()
+        welcomeViewController.modalPresentationStyle = .fullScreen
+        welcomeViewController.modalTransitionStyle = .crossDissolve
+        present(welcomeViewController, animated: true, completion: nil)
+    }
 }
