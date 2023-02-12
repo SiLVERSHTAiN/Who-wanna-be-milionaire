@@ -13,7 +13,7 @@ class MillionaireBrain {
     private(set) var questionNumber = 0
     var numberOfSeconds = 30
     var fiftyFiftyHintUsed = false
-    var peopleHintSsed = false
+    var peopleHintUsed = false
     var phoneHintUsed = false
     
     let questionArray = [
@@ -167,30 +167,96 @@ class MillionaireBrain {
             _ answerDLabel: UILabel
     )
     {
-        let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
-        let correctAnswer = quiz[questionNumber].correctAnswer
-        let answersArray: [String] = [correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer]
-        let randomAnswer = answersArray[Int.random(in: 0...6)]
-        
-        switch randomAnswer {
-        case firstButton.currentTitle!:
-            answerBLabel.textColor = UIColor(cgColor: color.cgColor)
-            answerCLabel.textColor = UIColor(cgColor: color.cgColor)
-            answerDLabel.textColor = UIColor(cgColor: color.cgColor)
-        case secondButton.currentTitle!:
-            answerALabel.textColor = UIColor(cgColor: color.cgColor)
-            answerCLabel.textColor = UIColor(cgColor: color.cgColor)
-            answerDLabel.textColor = UIColor(cgColor: color.cgColor)
-        case thirdButton.currentTitle!:
-            answerALabel.textColor = UIColor(cgColor: color.cgColor)
-            answerBLabel.textColor = UIColor(cgColor: color.cgColor)
-            answerDLabel.textColor = UIColor(cgColor: color.cgColor)
-        case fourthButton.currentTitle!:
-            answerALabel.textColor = UIColor(cgColor: color.cgColor)
-            answerBLabel.textColor = UIColor(cgColor: color.cgColor)
-            answerCLabel.textColor = UIColor(cgColor: color.cgColor)
-        default:
-            return
+        if !peopleHintUsed {
+            let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
+            let correctAnswer = quiz[questionNumber].correctAnswer
+            
+//------------------------------------------------------------------------------------------------------------
+            
+            let arr = [true, true, true, true, true, true, true, false, false, false]
+            //let arr = [false] //- для теста!!!
+            let rand = arr.randomElement()!
+            print(rand)
+            
+            if rand {
+                switch correctAnswer {
+                case answerALabel.text:
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerBLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerCLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerDLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                default:
+                    return
+                }
+            } else {
+                var labelArray = [answerALabel, answerBLabel, answerCLabel, answerDLabel]
+                var i = 0
+                for label in labelArray {
+                    if label.text == correctAnswer {
+                        labelArray.remove(at: i)
+                        i += 1
+                    }
+                }
+                var randLabelArray = labelArray.randomElement()
+                switch randLabelArray!.text! {
+                case answerALabel.text:
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerBLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerCLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerDLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                default:
+                    return
+                }
+            }
+            
+//------------------------------------------------------------------------------------------------------------
+//            let answersArray: [String] = [correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer]
+//            let randomAnswer = answersArray[Int.random(in: 0...6)]
+//
+//            switch randomAnswer {
+//            case firstButton.currentTitle!:
+//                answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+//            case secondButton.currentTitle!:
+//                answerALabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+//            case thirdButton.currentTitle!:
+//                answerALabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+//            case fourthButton.currentTitle!:
+//                answerALabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+//            default:
+//                return
+//            }
+//        } else {
+//            return
         }
     }
     
@@ -205,31 +271,100 @@ class MillionaireBrain {
             _ answerDLabel: UILabel
     )
     {
-        let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
-        let correctAnswer = quiz[questionNumber].correctAnswer
-        let answersArray: [String] = [correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer]
-        let randomAnswer = answersArray[Int.random(in: 0...6)]
-        
-        switch randomAnswer {
-        case firstButton.currentTitle!:
-            answerBLabel.textColor = UIColor(cgColor: color.cgColor)
-            answerCLabel.textColor = UIColor(cgColor: color.cgColor)
-            answerDLabel.textColor = UIColor(cgColor: color.cgColor)
-        case secondButton.currentTitle!:
-            answerALabel.textColor = UIColor(cgColor: color.cgColor)
-            answerCLabel.textColor = UIColor(cgColor: color.cgColor)
-            answerDLabel.textColor = UIColor(cgColor: color.cgColor)
-        case thirdButton.currentTitle!:
-            answerALabel.textColor = UIColor(cgColor: color.cgColor)
-            answerBLabel.textColor = UIColor(cgColor: color.cgColor)
-            answerDLabel.textColor = UIColor(cgColor: color.cgColor)
-        case fourthButton.currentTitle!:
-            answerALabel.textColor = UIColor(cgColor: color.cgColor)
-            answerBLabel.textColor = UIColor(cgColor: color.cgColor)
-            answerCLabel.textColor = UIColor(cgColor: color.cgColor)
-        default:
-            return
+        if !phoneHintUsed {
+            let color = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
+            let correctAnswer = quiz[questionNumber].correctAnswer
+            
+            //------------------------------------------------------------------------------------------------------------
+            let arr = [true, true, true, true, true, true, true, true, false, false]
+            //let arr = [false] //- для теста!!!
+            let rand = arr.randomElement()!
+            print(rand)
+            
+            if rand {
+                switch correctAnswer {
+                case answerALabel.text:
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerBLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerCLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerDLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                default:
+                    return
+                }
+            } else {
+                var labelArray = [answerALabel, answerBLabel, answerCLabel, answerDLabel]
+                var i = 0
+                for label in labelArray {
+                    if label.text == correctAnswer {
+                        labelArray.remove(at: i)
+                        i += 1
+                    }
+                }
+                var randLabelArray = labelArray.randomElement()
+                switch randLabelArray!.text! {
+                case answerALabel.text:
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerBLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerCLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+                case answerDLabel.text:
+                    answerALabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+                    answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+                default:
+                    return
+                }
+            }
         }
+            
+//------------------------------------------------------------------------------------------------------------
+            
+            
+//            let answersArray: [String] = [correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer, correctAnswer]
+//            let randomAnswer = answersArray[Int.random(in: 0...6)]
+//
+//            switch randomAnswer {
+//            case firstButton.currentTitle!:
+//                answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+//            case secondButton.currentTitle!:
+//                answerALabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+//            case thirdButton.currentTitle!:
+//                answerALabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerDLabel.textColor = UIColor(cgColor: color.cgColor)
+//            case fourthButton.currentTitle!:
+//                answerALabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerBLabel.textColor = UIColor(cgColor: color.cgColor)
+//                answerCLabel.textColor = UIColor(cgColor: color.cgColor)
+//            default:
+//                return
+//            }
+        }
+            
     }
-}
+
+    
+
 
