@@ -22,6 +22,7 @@ class AnswerView: BaseView {
     let backgroundImage = UIImage(named: Res.Image.backgroundImageName)
     let logoImage = UIImage(named: Res.Image.bigLogo)
     let buttonBackgroundImage = UIImage(named: Res.Text.buttonBackgroundImage)
+    let buttonBackgroundImageYellow = UIImage(named: "Rectangle yellow")
     let fiftyBackgroundImage = UIImage(named: Res.Text.fiftyBackgroundImage)
     let peopleBackgroundImage = UIImage(named: Res.Text.peopleBackgroundImage)
     let phoneBackgroundImage = UIImage(named: Res.Text.phoneBackgroundImage)
@@ -236,6 +237,17 @@ class AnswerView: BaseView {
         return view
     }()
     
+    private lazy var takeMoneyButton: UIButton = {
+        let view = UIButton()
+        view.setBackgroundImage(buttonBackgroundImageYellow, for: .normal)
+        view.setTitle("Take money", for: .normal)
+        view.setTitleColor(UIColor.white, for: .normal)
+        view.makeSystem(view)
+        view.addTarget(nil, action: #selector(AnswerViewController.takeMoney), for: .touchUpInside)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     func showFiftyFiftyHint(_ answers: [String], _ buttons: [UIButton], _ labels: [UILabel]) {
         if millionaireBrain.fiftyFiftyHintUsed {
             return
@@ -371,6 +383,7 @@ class AnswerView: BaseView {
         setupView(questionPrizeStack)
         setupView(answerButtonStack)
         setupView(hintButtonStack)
+        setupView(takeMoneyButton)
         
         millionaireBrain.getAnswers(answerALabel, answerBLabel, answerCLabel, answerDLabel)
         
@@ -474,7 +487,11 @@ class AnswerView: BaseView {
             answerButtonStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             answerButtonStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            hintButtonStack.topAnchor.constraint(lessThanOrEqualTo: answerButtonStack.bottomAnchor, constant: 100),
+            takeMoneyButton.topAnchor.constraint(equalTo: answerButtonStack.bottomAnchor, constant: 20),
+            takeMoneyButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+            takeMoneyButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
+            
+            hintButtonStack.topAnchor.constraint(lessThanOrEqualTo: takeMoneyButton.bottomAnchor, constant: 30),
             hintButtonStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             hintButtonStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             hintButtonStack.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -40),
