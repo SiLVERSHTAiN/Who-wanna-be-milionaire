@@ -9,7 +9,7 @@ import UIKit
 
 class NickNameViewController: UIViewController {
     
-    let nickNameView = NickNameView()
+    private let nickNameView = NickNameView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +17,6 @@ class NickNameViewController: UIViewController {
         setupViews()
         constraintViews()
         setupKeybordHidding()
-        
     }
 }
 
@@ -85,9 +84,12 @@ extension NickNameViewController {
             wrongFormatAlert()
             return
         }
-        let AnswerViewController = AnswerViewController()
-        AnswerViewController.modalPresentationStyle = .fullScreen
-        AnswerViewController.modalTransitionStyle = .crossDissolve
-        present(AnswerViewController, animated: true, completion: nil)
+        
+        UserDefaults.standard.set(nickName, forKey: "userName")
+        
+        let welcomeViewController = WelcomeViewController()
+        welcomeViewController.modalPresentationStyle = .fullScreen
+        welcomeViewController.modalTransitionStyle = .crossDissolve
+        present(welcomeViewController, animated: true, completion: nil)
     }
 }

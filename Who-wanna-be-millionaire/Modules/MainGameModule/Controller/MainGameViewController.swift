@@ -10,6 +10,7 @@ import UIKit
 class MainGameViewController: UIViewController {
     
     let mainGameView = MainGameView()
+    let updateTimer = MillionaireBrain.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,15 +18,16 @@ class MainGameViewController: UIViewController {
         setupViews()
         setConstraints()
         
-        
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
             let AnswerViewController = AnswerViewController()
             AnswerViewController.modalPresentationStyle = .fullScreen
             AnswerViewController.modalTransitionStyle = .crossDissolve
             present(AnswerViewController, animated: true, completion: nil)
         }
-        
-        
+    }
+    
+    override func viewWillAppear (_ animated: Bool) {
+        updateTimer.numberOfSeconds = 30
     }
 }
 extension MainGameViewController {
