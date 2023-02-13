@@ -208,7 +208,7 @@ class MillionaireBrain {
                         i += 1
                     }
                 }
-                var randLabelArray = labelArray.randomElement()
+                let randLabelArray = labelArray.randomElement()
                 switch randLabelArray!.text! {
                 case answerALabel.text:
                     answerBLabel.textColor = UIColor(cgColor: color.cgColor)
@@ -311,7 +311,7 @@ class MillionaireBrain {
                         i += 1
                     }
                 }
-                var randLabelArray = labelArray.randomElement()
+                let randLabelArray = labelArray.randomElement()
                 switch randLabelArray!.text! {
                 case answerALabel.text:
                     answerBLabel.textColor = UIColor(cgColor: color.cgColor)
