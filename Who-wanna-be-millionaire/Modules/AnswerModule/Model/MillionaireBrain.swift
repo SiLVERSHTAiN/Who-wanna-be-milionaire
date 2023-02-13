@@ -10,13 +10,15 @@ import UIKit
 class MillionaireBrain {
         
     static let shared = MillionaireBrain()
-    private(set) var questionNumber = 0
+    private(set) var questionNumber = 1
     var numberOfSeconds = 30
+    var prize = "Жопа"
     var fiftyFiftyHintUsed = false
     var peopleHintUsed = false
     var phoneHintUsed = false
     
     let questionArray = [
+    QuestionNumber(numberOfQuestion: "Вопрос 0", sum: "0р"),
     QuestionNumber(numberOfQuestion: "Вопрос 1", sum: "100р"),
     QuestionNumber(numberOfQuestion: "Вопрос 2", sum: "200р"),
     QuestionNumber(numberOfQuestion: "Вопрос 3", sum: "300р"),

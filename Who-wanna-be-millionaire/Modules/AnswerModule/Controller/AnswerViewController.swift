@@ -10,13 +10,14 @@ import AVFoundation
 
 class AnswerViewController: UIViewController {
     
-    //static let shared = AnswerViewController()
+    static let shared = AnswerViewController()
 
     var millionaireBrain = MillionaireBrain.shared
     var player: AVAudioPlayer!
     var timer = Timer()
     var updateTimer = Timer()
     var answerView = AnswerView()
+    
     
     var correctAnswerImage = UIImage(named: "Rectangle green")
     var waitAnswerImage = UIImage(named: "Rectangle yellow")
@@ -61,10 +62,29 @@ class AnswerViewController: UIViewController {
             answerView.setTimerLabel(temp)
         } else {
             timer.invalidate()
-            let ResultViewController = ResultViewController()
-            navigationController?.pushViewController(ResultViewController, animated: true)
+            let MainGameViewController = MainGameViewController()
+            MainGameViewController.modalPresentationStyle = .fullScreen
+            MainGameViewController.modalTransitionStyle = .crossDissolve
+            present(MainGameViewController, animated: true, completion: nil)
         }
     }
+    
+    
+    @objc func takeMoney(_ button: UIButton) {
+        var arr = millionaireBrain.questionArray[millionaireBrain.questionNumber - 1].sum
+        print(arr)
+        millionaireBrain.prize = arr
+        timer.invalidate()
+        player.stop()
+        
+        let ResultViewController = ResultViewController()
+        ResultViewController.modalPresentationStyle = .fullScreen
+        ResultViewController.modalTransitionStyle = .crossDissolve
+        present(ResultViewController, animated: true, completion: nil)
+    }
+    
+    
+    
     
     func playSound(soundName: String) {
         let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
@@ -106,10 +126,10 @@ class AnswerViewController: UIViewController {
             
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [self] in
-                let ResultViewController = ResultViewController()
-                ResultViewController.modalPresentationStyle = .fullScreen
-                ResultViewController.modalTransitionStyle = .crossDissolve
-                present(ResultViewController, animated: true, completion: nil)
+                let MainGameViewController = MainGameViewController()
+                MainGameViewController.modalPresentationStyle = .fullScreen
+                MainGameViewController.modalTransitionStyle = .crossDissolve
+                present(MainGameViewController, animated: true, completion: nil)
             }
         }
     }

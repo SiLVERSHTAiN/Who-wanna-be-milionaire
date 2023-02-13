@@ -9,6 +9,8 @@ import UIKit
 
 final class ResultView: UIView {
     
+    var millionaireBrain = MillionaireBrain.shared
+    
     private lazy var logoImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: Res.Image.bigLogo)
@@ -18,7 +20,8 @@ final class ResultView: UIView {
 
     private lazy var descriptionTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = Res.Text.loseGame
+        //label.text = Res.Text.loseGame
+        label.text = millionaireBrain.prize
         label.textColor = .white
         label.numberOfLines = 0
         label.font = Res.Fonts.setFont(name: .textAvenirFont, size: 24)

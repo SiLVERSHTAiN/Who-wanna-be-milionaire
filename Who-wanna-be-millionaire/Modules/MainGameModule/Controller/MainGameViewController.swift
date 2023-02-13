@@ -18,6 +18,8 @@ class MainGameViewController: UIViewController {
         setupViews()
         setConstraints()
         
+//        AnswerViewController.shared.takeMoney(arr: MillionaireBrain.shared.questionArray[MillionaireBrain.shared.questionNumber - 1])
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
             let AnswerViewController = AnswerViewController()
             AnswerViewController.modalPresentationStyle = .fullScreen
