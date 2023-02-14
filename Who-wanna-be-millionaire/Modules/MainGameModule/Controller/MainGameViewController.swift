@@ -11,6 +11,7 @@ class MainGameViewController: UIViewController {
     
     let mainGameView = MainGameView()
     let updateTimer = MillionaireBrain.shared
+    private lazy var answerViewController = AnswerViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,14 +19,29 @@ class MainGameViewController: UIViewController {
         setupViews()
         setConstraints()
         
-//        AnswerViewController.shared.takeMoney(arr: MillionaireBrain.shared.questionArray[MillionaireBrain.shared.questionNumber - 1])
+        print(answerViewController.isAnswerRight)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
-            let AnswerViewController = AnswerViewController()
-            AnswerViewController.modalPresentationStyle = .fullScreen
-            AnswerViewController.modalTransitionStyle = .crossDissolve
-            present(AnswerViewController, animated: true, completion: nil)
+        // Тут я пытался с помощью переменной isAnswerRight проверять правильный ли ответ на вопрос,
+        // и выводить нужный экран, но почему-то переменная не меняет своего значения, как инициализировал true,
+        // так и осталась тру, хотя в должна изменится в методе answerButtonTapped
+        
+        if answerViewController.isAnswerRight {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
+                let AnswerViewController = AnswerViewController()
+                AnswerViewController.modalPresentationStyle = .fullScreen
+                AnswerViewController.modalTransitionStyle = .crossDissolve
+                
+                present(AnswerViewController, animated: true, completion: nil)
+            }
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
+                let ResultViewController = ResultViewController()
+                ResultViewController.modalPresentationStyle = .fullScreen
+                ResultViewController.modalTransitionStyle = .crossDissolve
+                present(ResultViewController, animated: true, completion: nil)
+            }
         }
+        
     }
     
     override func viewWillAppear (_ animated: Bool) {

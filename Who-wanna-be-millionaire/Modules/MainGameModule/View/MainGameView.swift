@@ -23,7 +23,7 @@ final class MainGameView: UIView {
         return imageView
     }()
     
-    private lazy var labelQuestionOne : UILabel = {
+    var labelQuestionOne : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 1                     100 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -36,7 +36,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionTwo : UILabel = {
+     var labelQuestionTwo : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 2                     200 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -49,7 +49,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionThree : UILabel = {
+     var labelQuestionThree : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 3                     300 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -62,7 +62,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionFour : UILabel = {
+     var labelQuestionFour : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 4                     500 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -75,7 +75,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionFive : UILabel = {
+     var labelQuestionFive : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 5                  1000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -88,7 +88,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionSix : UILabel = {
+     var labelQuestionSix : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 6                  2000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -101,7 +101,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionSeven : UILabel = {
+     var labelQuestionSeven : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 7                  4000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -114,7 +114,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionEight : UILabel = {
+     var labelQuestionEight : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 8                  8000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -127,7 +127,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionNine : UILabel = {
+     var labelQuestionNine : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 9                16000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -140,7 +140,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionTen : UILabel = {
+     var labelQuestionTen : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 10              32000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -153,7 +153,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionEleven : UILabel = {
+     var labelQuestionEleven : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 11              64000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -166,7 +166,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionTwelve : UILabel = {
+     var labelQuestionTwelve : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 12            125000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -179,7 +179,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionThreeteen : UILabel = {
+     var labelQuestionThreeteen : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 13            250000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -192,7 +192,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionFourteen : UILabel = {
+     var labelQuestionFourteen : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 14            500000 RUB"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
@@ -205,7 +205,7 @@ final class MainGameView: UIView {
         return label
     }()
     
-    private lazy var labelQuestionFiveteen : UILabel = {
+     var labelQuestionFiveteen : UILabel = {
         let label = UILabel()
         label.text = "Вопрос 15              1 Миллион"
         label.font = UIFont(name: "Avenir Next Bold", size: 20)
