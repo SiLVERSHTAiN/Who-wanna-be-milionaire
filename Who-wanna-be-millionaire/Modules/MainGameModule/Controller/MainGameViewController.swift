@@ -21,9 +21,18 @@ class MainGameViewController: UIViewController {
         setupViews()
         setConstraints()
         
-        print(answerViewValue!)
+        print("taaaak: \(answerViewValue!)")
 
-        if answerViewValue! {
+        if answerViewValue! && updateTimer.prize == "1000000р" {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
+                let resultViewController = ResultViewController()
+                updateTimer.questionNumber = 1
+                resultViewController.modalPresentationStyle = .fullScreen
+                resultViewController.modalTransitionStyle = .crossDissolve
+                present(resultViewController, animated: true, completion: nil)
+            }
+            
+        } else if answerViewValue! {
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
                 answerViewController.modalPresentationStyle = .fullScreen
                 answerViewController.modalTransitionStyle = .crossDissolve
@@ -32,11 +41,11 @@ class MainGameViewController: UIViewController {
             }
         } else {
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [self] in
-                let ResultViewController = ResultViewController()
+                let resultViewController = ResultViewController()
                 updateTimer.questionNumber = 1
-                ResultViewController.modalPresentationStyle = .fullScreen
-                ResultViewController.modalTransitionStyle = .crossDissolve
-                present(ResultViewController, animated: true, completion: nil)
+                resultViewController.modalPresentationStyle = .fullScreen
+                resultViewController.modalTransitionStyle = .crossDissolve
+                present(resultViewController, animated: true, completion: nil)
             }
         }
     }

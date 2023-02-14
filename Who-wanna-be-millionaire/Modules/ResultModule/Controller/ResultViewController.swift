@@ -10,6 +10,7 @@ import UIKit
 class ResultViewController: UIViewController {
     
     let checkResult = MainGameViewController()
+    var millionaireBrain = MillionaireBrain.shared
     
     private lazy var backgroundImageView: UIImageView = {
         let image = UIImageView()
@@ -41,6 +42,9 @@ class ResultViewController: UIViewController {
     }
     
     @objc func playAgainTapped(_ sender: UIButton) {
+        millionaireBrain.fiftyFiftyHintUsed = false
+        millionaireBrain.peopleHintUsed = false
+        millionaireBrain.phoneHintUsed = false
         let welcomeViewController = WelcomeViewController()
         welcomeViewController.modalPresentationStyle = .fullScreen
         welcomeViewController.modalTransitionStyle = .crossDissolve

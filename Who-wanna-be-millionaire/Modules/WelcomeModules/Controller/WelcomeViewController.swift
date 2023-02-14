@@ -19,6 +19,7 @@ class WelcomeViewController: UIViewController {
     
     private lazy var logoAndLabelView = LogoAndLabelView()
     private lazy var buttonsView = ButtonsView()
+    var millionaireBrain = MillionaireBrain.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,7 @@ class WelcomeViewController: UIViewController {
 extension WelcomeViewController {
     
     @objc func startGameButtonAction() {
+        //millionaireBrain.prize = "0р"
         let transition = CATransition()
         transition.duration = 0.5
         transition.type = CATransitionType.moveIn

@@ -12,7 +12,7 @@ class MillionaireBrain {
     static let shared = MillionaireBrain()
     var questionNumber = 1
     var numberOfSeconds = 30
-    var prize = "Вы выиграли"
+    var prize = "0р"
     var fiftyFiftyHintUsed = false
     var peopleHintUsed = false
     var phoneHintUsed = false
@@ -137,6 +137,8 @@ class MillionaireBrain {
             print("Ответ верный")
             if questionNumber < quiz.count - 1 {
                 questionNumber += 1
+            } else {
+                prize = "1000000р"
             }
             return (button, true)
         default:
