@@ -18,26 +18,19 @@ class AnswerViewController: UIViewController {
     var updateTimer = Timer()
     var answerView = AnswerView()
     
-    
     var correctAnswerImage = UIImage(named: "Rectangle green")
     var waitAnswerImage = UIImage(named: "Rectangle yellow")
     var wrongAnswerImage = UIImage(named: "Rectangle red")
     
-    var mainGameView = MainGameView()
     var isAnswerRight = true
    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setupView(answerView)
         constraintViews()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
-//            playSound(soundName: "timer-sound")
-//            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        updateTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: false)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
             playSound(soundName: "timer-sound")
@@ -72,22 +65,20 @@ class AnswerViewController: UIViewController {
         }
     }
     
-    
     @objc func takeMoney(_ button: UIButton) {
-        var arr = millionaireBrain.questionArray[millionaireBrain.questionNumber - 1].sum
+        let arr = millionaireBrain.questionArray[millionaireBrain.questionNumber - 1].sum
+        
         print(arr)
         millionaireBrain.prize = arr
         timer.invalidate()
         player.stop()
+        millionaireBrain.questionNumber = 1
         
         let ResultViewController = ResultViewController()
         ResultViewController.modalPresentationStyle = .fullScreen
         ResultViewController.modalTransitionStyle = .crossDissolve
         present(ResultViewController, animated: true, completion: nil)
     }
-    
-    
-    
     
     func playSound(soundName: String) {
         let url = Bundle.main.url(forResource: soundName, withExtension: "mp3")
@@ -101,6 +92,8 @@ class AnswerViewController: UIViewController {
         let checkAnswer = millionaireBrain.checkAnswer(sender)
         isAnswerRight = checkAnswer.1
         print(isAnswerRight, "eto v nthode")
+        
+        answerView.disableButtons()
         
         if checkAnswer.1 {
             playSound(soundName: "waitForInspection")
@@ -117,8 +110,9 @@ class AnswerViewController: UIViewController {
                 let mainGameViewController = MainGameViewController()
                 mainGameViewController.modalPresentationStyle = .fullScreen
                 mainGameViewController.modalTransitionStyle = .crossDissolve
+                mainGameViewController.answerViewValue = isAnswerRight
                 
-                let tag = millionaireBrain.questionNumber
+                let tag = millionaireBrain.questionNumber - 1
                 switch tag {
                 case 1:
                     mainGameViewController.mainGameView.labelQuestionOne.backgroundColor = .systemGreen
@@ -139,20 +133,20 @@ class AnswerViewController: UIViewController {
                     mainGameViewController.mainGameView.labelQuestionTwo.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThree.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFour.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemYellow
                 case 6:
                     mainGameViewController.mainGameView.labelQuestionOne.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionTwo.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThree.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFour.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionSix.backgroundColor = .systemGreen
                 case 7:
                     mainGameViewController.mainGameView.labelQuestionOne.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionTwo.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThree.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFour.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionSix.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionSeven.backgroundColor = .systemGreen
                 case 8:
@@ -160,7 +154,7 @@ class AnswerViewController: UIViewController {
                     mainGameViewController.mainGameView.labelQuestionTwo.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThree.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFour.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionSix.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionSeven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionEight.backgroundColor = .systemGreen
@@ -169,7 +163,7 @@ class AnswerViewController: UIViewController {
                     mainGameViewController.mainGameView.labelQuestionTwo.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThree.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFour.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionSix.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionSeven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionEight.backgroundColor = .systemGreen
@@ -179,35 +173,35 @@ class AnswerViewController: UIViewController {
                     mainGameViewController.mainGameView.labelQuestionTwo.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThree.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFour.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionSix.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionSeven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionEight.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionNine.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemYellow
                 case 11:
                     mainGameViewController.mainGameView.labelQuestionOne.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionTwo.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThree.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFour.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionSix.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionSeven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionEight.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionNine.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionEleven.backgroundColor = .systemGreen
                 case 12:
                     mainGameViewController.mainGameView.labelQuestionOne.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionTwo.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThree.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFour.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionSix.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionSeven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionEight.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionNine.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionEleven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionTwelve.backgroundColor = .systemGreen
                 case 13:
@@ -215,12 +209,12 @@ class AnswerViewController: UIViewController {
                     mainGameViewController.mainGameView.labelQuestionTwo.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThree.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFour.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionSix.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionSeven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionEight.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionNine.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionEleven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionTwelve.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThreeteen.backgroundColor = .systemGreen
@@ -229,12 +223,12 @@ class AnswerViewController: UIViewController {
                     mainGameViewController.mainGameView.labelQuestionTwo.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThree.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFour.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionSix.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionSeven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionEight.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionNine.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionEleven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionTwelve.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThreeteen.backgroundColor = .systemGreen
@@ -244,17 +238,17 @@ class AnswerViewController: UIViewController {
                     mainGameViewController.mainGameView.labelQuestionTwo.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThree.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFour.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFive.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionSix.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionSeven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionEight.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionNine.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionTen.backgroundColor = .systemYellow
                     mainGameViewController.mainGameView.labelQuestionEleven.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionTwelve.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionThreeteen.backgroundColor = .systemGreen
                     mainGameViewController.mainGameView.labelQuestionFourteen.backgroundColor = .systemGreen
-                    mainGameViewController.mainGameView.labelQuestionFiveteen.backgroundColor = .systemGreen
+                    mainGameViewController.mainGameView.labelQuestionFiveteen.backgroundColor = .systemYellow
                 default:
                     print("ERROR")
                 }
@@ -262,6 +256,23 @@ class AnswerViewController: UIViewController {
                 present(mainGameViewController, animated: true, completion: nil)
             }
         } else {
+            
+            var prize = 0
+            let arr = millionaireBrain.questionArray[millionaireBrain.questionNumber - 1].sum
+            let arrNumber = Int(arr.dropLast(1))
+            
+            guard let arrNumber else { return }
+            print(arrNumber)
+            switch arrNumber {
+            case 0..<1000: prize = 0
+            case 1000..<32000: prize = 1000
+            case 32000..<1000000: prize = 32000
+            case 1000000: prize = 1000000
+            default: return
+            }
+
+            millionaireBrain.prize = "\(prize)р"
+            
             playSound(soundName: "waitForInspection")
             checkAnswer.0.setBackgroundImage(waitAnswerImage, for: .normal)
             
@@ -276,8 +287,9 @@ class AnswerViewController: UIViewController {
                 let mainGameViewController = MainGameViewController()
                 mainGameViewController.modalPresentationStyle = .fullScreen
                 mainGameViewController.modalTransitionStyle = .crossDissolve
+                mainGameViewController.answerViewValue = isAnswerRight
                 
-                let tag = millionaireBrain.questionNumber + 1
+                let tag = millionaireBrain.questionNumber
                 switch tag {
                 case 1:
                     mainGameViewController.mainGameView.labelQuestionOne.backgroundColor = .systemRed

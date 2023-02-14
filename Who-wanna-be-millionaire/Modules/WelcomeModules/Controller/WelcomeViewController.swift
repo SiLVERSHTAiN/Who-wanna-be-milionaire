@@ -29,24 +29,13 @@ class WelcomeViewController: UIViewController {
         setupViews()
         setConstraints()
         
-        buttonsView.rulesButton.addTarget(self, action: #selector(rulesButtonAction), for: .touchUpInside)
         buttonsView.startGameButton.addTarget(self, action: #selector(startGameButtonAction), for: .touchUpInside)
+        buttonsView.registerButton.addTarget(self, action: #selector(registerGameButtonAction), for: .touchUpInside)
+        buttonsView.rulesButton.addTarget(self, action: #selector(rulesButtonAction), for: .touchUpInside)
     }
 }
 
 extension WelcomeViewController {
-    
-    @objc func rulesButtonAction() {
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = CATransitionType.moveIn
-        transition.subtype = CATransitionSubtype.fromRight
-        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
-        view.window!.layer.add(transition, forKey: kCATransition)
-        let rulesViewController = RulesViewController()
-        rulesViewController.modalPresentationStyle = .fullScreen
-        present(rulesViewController, animated: false, completion: nil)
-    }
     
     @objc func startGameButtonAction() {
         let transition = CATransition()
@@ -56,6 +45,30 @@ extension WelcomeViewController {
         transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
         view.window!.layer.add(transition, forKey: kCATransition)
         let rulesViewController = AnswerViewController()
+        rulesViewController.modalPresentationStyle = .fullScreen
+        present(rulesViewController, animated: false, completion: nil)
+    }
+    
+    @objc func registerGameButtonAction() {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.moveIn
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        let rulesViewController = NickNameViewController()
+        rulesViewController.modalPresentationStyle = .fullScreen
+        present(rulesViewController, animated: false, completion: nil)
+    }
+    
+    @objc func rulesButtonAction() {
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = CATransitionType.moveIn
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        let rulesViewController = RulesViewController()
         rulesViewController.modalPresentationStyle = .fullScreen
         present(rulesViewController, animated: false, completion: nil)
     }

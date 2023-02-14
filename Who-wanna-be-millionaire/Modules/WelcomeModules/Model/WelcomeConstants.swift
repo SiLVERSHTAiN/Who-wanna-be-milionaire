@@ -16,6 +16,7 @@ enum WelcomeConstants {
     
     enum Text {
         static let welcomLabelText = "Welcome"
+        static let register = "Регистрация"
         static let gameNameLabelText = "to Who Wants to be a Millionare"
         static let rulesButtonTitleText = "Правила игры"
         static let startButtonTitleText = "Начать игру"

@@ -9,6 +9,8 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    let checkResult = MainGameViewController()
+    
     private lazy var backgroundImageView: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(named: Res.Image.backgroundImageName)

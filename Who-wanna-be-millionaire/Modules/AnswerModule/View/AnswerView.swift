@@ -312,6 +312,19 @@ class AnswerView: BaseView {
         return view
     }()
     
+    func disableButtons() {
+        phoneHintButton.isEnabled = false
+        peopleHintButton.isEnabled = false
+        fiftyHintButton.isEnabled = false
+        
+        firstAnswerButton.isEnabled = false
+        secondAnswerButton.isEnabled = false
+        thirdAnswerButton.isEnabled = false
+        fourthAnswerButton.isEnabled = false
+        
+        takeMoneyButton.isEnabled = false
+    }
+    
     @objc func hintButtonTapped(sender: UIButton) {
         
         guard let choose = sender.currentTitle else { return }

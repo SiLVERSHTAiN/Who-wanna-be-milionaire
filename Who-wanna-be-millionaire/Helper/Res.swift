@@ -17,6 +17,7 @@ enum Res {
     
     enum Text {
         static let welcomLabelText = "Welcome"
+        static let register = "Register"
         static let gameNameLabelText = "to Who Wants to be a Millionare"
         static let rulesButtonTitleText = "Правила игры"
         static let startButtonTitleText = "Начать игру"
@@ -31,7 +32,6 @@ enum Res {
         static let peopleDisableBackgroundImage = "group_disable"
         static let phoneDisableBackgroundImage = "telephone_disable"
         static let enterUrName = "Enter your nickname"
-        static let register = "Register"
     }
     
     enum Fonts: String {

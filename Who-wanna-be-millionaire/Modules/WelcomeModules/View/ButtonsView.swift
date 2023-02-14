@@ -17,12 +17,21 @@ class ButtonsView: UIView {
 
     private lazy var startAttributedString = NSMutableAttributedString(string: "")
     private lazy var roolsAttributedString = NSMutableAttributedString(string: "")
+    private lazy var registerAttributedString = NSMutableAttributedString(string: "")
     
     lazy var rulesButton: UIButton = {
         let button = UIButton(type: .system)
         let buttonTitleStr = NSMutableAttributedString(string: WelcomeConstants.Text.rulesButtonTitleText, attributes:attrs)
         roolsAttributedString.append(buttonTitleStr)
         button.setAttributedTitle(roolsAttributedString, for: .normal)
+        return button
+    }()
+    
+    lazy var registerButton: UIButton = {
+        let button = UIButton(type: .system)
+        let buttonTitleStr = NSMutableAttributedString(string: WelcomeConstants.Text.register, attributes:attrs)
+        registerAttributedString.append(buttonTitleStr)
+        button.setAttributedTitle(registerAttributedString, for: .normal)
         return button
     }()
     
@@ -50,16 +59,20 @@ extension ButtonsView {
     
     func setupViews() {
         setupView(rulesButton)
+        setupView(registerButton)
         setupView(startGameButton)
     }
     
     func setConstraints() {
         NSLayoutConstraint.activate([
-            rulesButton.topAnchor.constraint(equalTo: topAnchor),
-            rulesButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            startGameButton.topAnchor.constraint(equalTo: rulesButton.bottomAnchor, constant: 6),
+            startGameButton.topAnchor.constraint(equalTo: topAnchor),
             startGameButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
+            registerButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            registerButton.topAnchor.constraint(equalTo: startGameButton.bottomAnchor, constant: 6),
+            
+            rulesButton.topAnchor.constraint(equalTo: registerButton.bottomAnchor, constant: 6),
+            rulesButton.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
 }

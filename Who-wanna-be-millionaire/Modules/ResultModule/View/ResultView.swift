@@ -32,7 +32,7 @@ final class ResultView: UIView {
     
     private lazy var resultTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = Res.Text.lose
+        label.text = "YOU WIN"
         label.textColor = UIColor.orange
         label.textColor = .init(hexString: "#F66324")
         label.textAlignment = .center
@@ -66,6 +66,14 @@ final class ResultView: UIView {
 }
 
 extension ResultView {
+    
+//    func changeLabelText(answer: Bool) {
+//        if answer {
+//            resultTitleLabel.text = "YOU WIN"
+//        } else {
+//            resultTitleLabel.text = "YOU LOSE"
+//        }
+//    }
     
     func setupViews() {
         setupView(logoImageView)
