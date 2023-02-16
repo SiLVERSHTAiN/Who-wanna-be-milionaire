@@ -39,7 +39,6 @@ class WelcomeViewController: UIViewController {
 extension WelcomeViewController {
     
     @objc func startGameButtonAction() {
-        //millionaireBrain.prize = "0р"
         let transition = CATransition()
         transition.duration = 0.5
         transition.type = CATransitionType.moveIn

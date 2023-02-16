@@ -20,7 +20,6 @@ final class ResultView: UIView {
 
     private lazy var descriptionTitleLabel: UILabel = {
         let label = UILabel()
-        //label.text = Res.Text.loseGame
         label.text = millionaireBrain.prize
         label.textColor = .white
         label.numberOfLines = 0
@@ -67,14 +66,6 @@ final class ResultView: UIView {
 
 extension ResultView {
     
-//    func changeLabelText(answer: Bool) {
-//        if answer {
-//            resultTitleLabel.text = "YOU WIN"
-//        } else {
-//            resultTitleLabel.text = "YOU LOSE"
-//        }
-//    }
-    
     func setupViews() {
         setupView(logoImageView)
         setupView(descriptionTitleLabel)
@@ -102,10 +93,6 @@ extension ResultView {
             playAgainButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
             playAgainButton.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
-    }
-    
-    func configureAppearance() {
-        
     }
 }
 

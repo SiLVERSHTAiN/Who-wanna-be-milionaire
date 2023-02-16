@@ -213,7 +213,6 @@ final class MainGameView: UIView {
         label.numberOfLines = 0
         label.textColor = .white
         label.backgroundColor = .systemYellow
-        //label.backgroundColor = UIColor(red: 0.78, green: 0.70, blue: 0.43, alpha: 1.00)
         label.layer.cornerRadius = 16
         label.layer.masksToBounds = true
         return label
@@ -245,7 +244,6 @@ final class MainGameView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
 extension MainGameView {
     
