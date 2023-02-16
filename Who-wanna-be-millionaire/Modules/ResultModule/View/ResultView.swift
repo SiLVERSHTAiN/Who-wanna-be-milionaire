@@ -56,7 +56,6 @@ final class ResultView: UIView {
         
         setupViews()
         constraintViews()
-        configureAppearance()
     }
     
     required init?(coder: NSCoder) {
